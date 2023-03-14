@@ -1,0 +1,164 @@
+.landingPageDiv {
+    height: 70vh;
+    width: 100%;
+    color: white;
+    /* background-color: white; */
+    position: relative;
+
+
+
+}
+.landingPageClubName span{
+    color:rgb(47, 210, 255);
+}
+.btn {
+    border: 2px solid white;
+    margin-top: 40px;
+    margin-left: 38px;
+    padding: 10px 10px 10px 10px;
+    font-weight: 500;
+    font-size: 16px;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    width: 20vw;
+    .rightArrow{
+        size: 25;
+        color: red;
+    }
+}
+.btn span {
+    margin-right: 40px;
+
+}
+
+.btn:hover{
+    background-color: white;
+    color: black;
+   font-weight: 600;
+}
+
+.landingPageDiv .landingPageText {
+    transition-delay: 0.5s;
+
+}
+
+@keyframes AnimationText {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+.landingPageClubName {
+
+    font-style: normal;
+    font-weight: 600;
+    font-size: 55px;
+    line-height: 100px;
+    letter-spacing: .12em;
+    /* margin-bottom: 2rem; */
+    padding: 100px 0 0 30px;
+
+}
+
+.landingPageDiv .landingPageText>span,
+.Typewriter__wrapper {
+    font-style: normal;
+    font-weight: 500;
+    line-height: .4em;
+    font-size: 22px;
+    letter-spacing: .12em;
+    padding: 0 0 0 35px;
+}
+
+
+
+@media (max-width:991px) {
+    .landingPageClubName {
+        font-style: normal;
+        font-weight: 700;
+        font-size: 38px;
+        line-height: 50px;
+        letter-spacing: .12em;
+        /* margin-bottom: 2rem; */
+        padding: 180px 0 0 30px;
+
+
+    }
+
+    .landingPageDiv .landingPageText>span,
+    .Typewriter__wrapper {
+        font-style: normal;
+        font-weight: 700;
+        line-height: .2em;
+        font-size: 16px;
+        letter-spacing: .12em;
+        padding: 0 0 0 34px;
+    }
+    .btn {
+        margin-top: 80px;
+        margin-left: 34px;
+        padding: 6px;
+        font-weight: 500;
+        font-size: 16px;
+        width: 200px;
+        .rightArrow{
+            size: 16;
+            color: red;
+        }
+    }
+
+
+}
+@media (max-width:480px) {
+
+.landingPageDiv{
+    height: 40vh;
+}
+
+    .landingPageClubName {
+        font-style: normal;
+        font-weight: 700;
+        font-size:20px;
+        line-height: 10px;
+        letter-spacing: .1em;
+        /* margin-bottom: 2rem; */
+        padding: 100px 0 0 30px;
+        width: 100%;
+    
+
+
+    }
+
+    .landingPageDiv .landingPageText>span,
+    .Typewriter__wrapper {
+        font-style: normal;
+        font-weight: 700;
+        line-height: 0;
+        font-size: .48rem;
+        letter-spacing: .1em;
+        padding: 0 0 0 30px;
+    }
+
+    .btn {
+        border: 2px solid white;
+        margin-top: 14px;
+        margin-left: 30px;
+        padding: 6px;
+        font-weight: 500;
+        font-size: 10px;
+        cursor: pointer;
+        display: flex;
+        justify-content: space-between;
+        width: 160px;
+        .rightArrow{
+            size: 16;
+            color: red;
+        }
+    }
+
+}

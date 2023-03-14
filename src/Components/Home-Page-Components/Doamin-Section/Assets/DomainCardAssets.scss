@@ -1,0 +1,312 @@
+.domain {
+    min-width: 15.5rem;
+    background: #272727;
+    display: inline-block;
+    margin: 0 1rem;
+    -webkit-tap-highlight-color: transparent;
+
+    &:hover {
+        cursor: pointer;
+
+    }
+
+    .icon-wrap {
+        height: 7.8rem;
+        padding: 1.2rem;
+        display: flex;
+        justify-content: center;
+
+        svg {
+            height: 100%;
+        }
+    }
+
+    .domain-heading {
+        text-align: center;
+        color: white;
+        font-family: Poppins;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 20px;
+        line-height: 127.2%;
+        margin: 0 1.2rem;
+        padding: 1.2rem 0;
+    }
+
+    .domain-headings {
+        text-align: center;
+        color: white;
+        font-weight: 400;
+        font-family: "poppins",serif;
+        font-style: normal;
+        font-size: 20px;
+        line-height: 127.2%;
+        margin: .5rem 1.2rem 0 1.2rem;
+        padding: 1.2rem 0;
+    }
+}
+
+.cv:hover #cv-m {
+    animation-play-state: running;
+}
+
+#cv-m {
+    animation-name: cv-beat;
+    animation-duration: 1000ms;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    animation-direction: alternate;
+    animation-play-state: running;
+    transform-origin: center;
+}
+
+@keyframes cv-beat {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(0.8);
+    }
+}
+
+#design-m {
+    animation-name: penmove;
+    animation-duration: 1000ms;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    animation-direction: alternate;
+    transform-origin: center;
+    transform-box: fill-box;
+    animation-play-state: running;
+}
+
+.design:hover #design-m {
+    animation-play-state: running;
+}
+
+@keyframes penmove {
+    from {
+        transform: rotate(-75deg);
+    }
+
+    to {
+        transform: rotate(75deg);
+    }
+}
+
+#electronics-m {
+    animation-name: connect;
+    animation-duration: 1000ms;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    animation-direction: alternate;
+    animation-play-state: running;
+}
+
+.electronics:hover #electronics-m {
+    animation-play-state: running;
+}
+
+@keyframes connect {
+    from {
+        transform: translateX(0px);
+    }
+
+    to {
+        transform: translateX(25px);
+    }
+}
+
+#app-m-left {
+    animation-name: rect-l;
+    animation-duration: 800ms;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    animation-direction: alternate;
+    animation-play-state: running;
+}
+
+#app-m-right {
+    animation-name: rect-r;
+    animation-duration: 800ms;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    animation-direction: alternate;
+    animation-play-state: running;
+}
+
+.app:hover #app-m-left {
+    animation-play-state: running;
+}
+
+.app:hover #app-m-right {
+    animation-play-state: running;
+}
+
+@keyframes rect-l {
+    from {
+        transform: translateX(0px);
+    }
+
+    to {
+        transform: translateX(5px);
+    }
+}
+
+@keyframes rect-r {
+    from {
+        transform: translateX(0px);
+    }
+
+    to {
+        transform: translateX(-5px);
+    }
+}
+
+#Ant-1,
+#Ant-2,
+#Ant-4,
+#Ant-5,
+#Ant-6,
+#Ant-3 {
+    animation-name: web-scrn;
+    animation-duration: 1000ms;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    animation-direction: alternate;
+    transform-origin: center;
+    transform-box: fill-box;
+    animation-play-state: running;
+
+}
+
+#VLSI-2,
+#VLSI-1 {
+    animation-name: web-scrn;
+    animation-duration: 1000ms;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    animation-direction: alternate;
+    transform-origin: center;
+    transform-box: fill-box;
+    animation-play-state: running;
+}
+
+#VLSI-2:hover,
+#VLSI-1:hover {
+    animation-play-state: running;
+}
+
+#web-m {
+    animation-name: web-scrn;
+    animation-duration: 1000ms;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    animation-direction: alternate;
+    transform-origin: center;
+    transform-box: fill-box;
+    animation-play-state: running;
+}
+
+.web:hover #web-m {
+    animation-play-state: running;
+}
+
+@keyframes web-scrn {
+    from {
+        transform: scale(1);
+    }
+
+    to {
+        transform: scale(0.5);
+    }
+}
+
+#iot-m {
+    animation-name: spin;
+    animation-duration: 4000ms;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    transform-origin: 37px 37px;
+    animation-play-state: running;
+}
+
+.iot:hover #iot-m {
+    animation-play-state: running;
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+#ml-m {
+    animation-name: spin-ml;
+    animation-duration: 4000ms;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    transform-origin: center;
+    transform-box: fill-box;
+    animation-play-state: running;
+}
+
+.ml:hover #ml-m {
+    animation-play-state: running;
+}
+
+@keyframes spin-ml {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+
+@media only screen and (max-width: 470px) {
+    .domain {
+        min-width: 15rem;
+        margin: 0 3px;
+
+        .icon-wrap {
+            height: 6rem;
+        }
+
+        .domain-heading {
+            font-size: 14px;
+        }
+    }
+}
+
+
+@media only screen and (max-width:480px) {
+
+    .domain {
+        min-width: 12.5rem;
+        margin: 0 1rem;
+
+        &:hover {
+            cursor: pointer;
+
+        }
+        .icon-wrap {
+            height: 6.8rem;
+            padding: 1 rem;
+            display: flex;
+            justify-content: center;
+    
+            svg {
+                height: 100%;
+            }
+        }
+    }
+
+}

@@ -1,0 +1,198 @@
+.navBarMainDiv { 
+    height: 12vh;
+    width: 100%;
+    background-color: #161616;
+    z-index: 100;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+    font-weight: 600;
+    font-size: 18px;
+    position: sticky;
+    top: 0%;
+    padding: 0 100px 0 0;
+    transition: all 0.5s;
+    letter-spacing: .1rem;
+    align-items: center;
+
+
+
+
+}
+
+
+
+#Mobile{
+    display: none;
+    padding-left: 40px;
+    cursor: pointer;
+}
+
+
+
+.navBarRight {
+    width: 15%;
+    display: flex;
+    flex-direction: row;
+    font-weight: 600;
+    font-size: 18px;
+    justify-content: space-between;
+    align-items: center;
+    letter-spacing: .1rem;
+    button{
+        background-color: #161616;
+        border: 0px;
+        font-size: 18px;
+        font-weight: 600;
+        color: white;
+        cursor: pointer;
+
+        &:hover{
+            color: #17cf97;
+        }
+
+    }
+
+
+}
+
+.navBarRight span{
+border: 1px solid #161616;
+}
+
+
+.link{
+    color: white;
+    border: 1px solid #161616;
+    text-decoration: none;
+    padding: 0 5px 0 15px;
+}
+
+.link:hover{
+    color: #17cf97;
+
+}
+/* .link:hover::after{
+    content:" ";
+    width: 30px;
+    color: #17cf97;
+    height: 2px;
+    background-color: #17cf97;
+} */
+
+
+
+
+
+
+@media (max-width:991px) {
+    .navBarMainDiv { 
+        height: 10vh;
+        width: 100%;
+    }
+    .navBarRight {
+       font-size: 16px;;
+    width: fit-content;
+    right: 5px;
+    
+    }
+    
+    #navbar{
+        display: flex;
+        flex-direction: column;
+        border: none;
+        font-size: 18px;
+         background-color: #161616;
+        position:absolute;
+        padding: 20px;
+        top: 10vh;
+        left: 0px;
+        width: 200px;
+  
+       
+    }
+
+
+    #navbar.close{
+        left: -1000px;
+     
+    }
+
+    .link{
+        color: white;
+        border: 1px solid #161616;
+        text-decoration: none;
+        border: 0;
+        padding-left: 10px;
+        margin-bottom: 10px;
+        text-align: start;
+        text-decoration: none;
+        color: white;
+    }
+
+    #Mobile{
+        display: block;
+    }
+
+}
+
+@media (max-width:480px) {
+    .navBarMainDiv { 
+        height: 8vh;
+        width: 100%;
+    }
+    .navBarRight {
+       font-size: 12px;;
+    width: fit-content;
+    right: 5px;
+    margin-left: 9rem;
+    
+    }
+    .navbar{
+        display: flex;
+        height: 50%;
+        flex-direction: column;
+        justify-content: start;
+        align-items: start;
+    }
+    
+    #navbar{
+        display: flex;
+        flex-direction: column;
+        justify-content: start;
+        align-items: start;
+        border: none;
+        font-size: 18px;
+        background-color: #161616;
+        position: absolute;
+        padding: 20px;
+        top: 8vh;
+        left: 0px;
+        height: 100vh;
+       
+       
+    }
+    #navbar.close{
+        left: -1000px;
+    }
+
+    .link{
+        color: white;
+        border: 1px solid #161616;
+        text-decoration: none;
+        padding-left: 10px;
+        margin-bottom: 10px;
+        text-align: start;
+    }
+    #navbar >link{
+        font-size: 14px;
+    }
+
+    #Mobile{
+        display: block;
+    }
+
+
+}
+

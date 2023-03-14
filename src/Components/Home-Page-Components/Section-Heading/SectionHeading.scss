@@ -1,0 +1,70 @@
+.section-heading {
+    position: relative;
+    height: 7.5rem;
+    text-align: center;
+    display: flex;
+    align-items: center;
+  
+    hr {
+      width: 100%;
+      position: absolute;
+      top: 50%;
+      z-index: 0;
+    }
+  
+    h1 {
+      font-family: Roboto;
+      font-style: normal;
+      font-weight: bold;
+      font-size: 2.8rem;
+      line-height: 5.1rem;
+      letter-spacing: 0.1em;
+      padding: 0 2.1rem;
+    }
+  
+    .left {
+      position: absolute;
+      z-index: 1;
+      left: 9.5%;
+    }
+  
+    .center {
+      position: absolute;
+      z-index: 1;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  
+    .light {
+      border: 2px solid black;
+      background: white;
+    }
+  
+    .dark {
+      border: 2px solid white;
+      background: #161616;
+      color: white;
+    }
+    .dark hr {
+      color: white;
+    }
+  }
+  
+  @media only screen and (max-width: 650px) {
+    .section-heading {
+      h1 {
+        font-size: 3rem;
+        line-height: 6rem;
+      }
+    }
+  }
+  
+  @media only screen and (max-width: 470px) {
+    .section-heading {
+      h1 {
+        font-size: 17px;
+        line-height: 25px;
+      }
+    }
+  }
+  

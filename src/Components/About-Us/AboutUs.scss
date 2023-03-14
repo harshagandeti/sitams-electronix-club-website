@@ -1,0 +1,102 @@
+.Abtus-Main-Div {
+    width: 100%;
+    // height: 200vh;
+    background-color: white;
+    color: black;
+   padding: 20px 0 0 0;
+    position: relative;
+
+
+    .Abt-Containers {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        margin: 40px 20px;
+
+        .Container {
+            width: 550px;
+            height: 400px;
+            background-color: whitesmoke;
+            margin: 20px 20px;
+            border-radius: 10px;
+            z-index: 1;
+            padding: 10px 20px;
+
+            .header {
+                display: flex;
+                align-items: center;
+                padding:0 10px 20px 0;
+                height: 40%;
+                width: 100%;
+                border-bottom: 2px solid rgba(104, 103, 103, 0.505);
+
+                .profile-img {
+                    width: 30%;
+                    border-right: 2px solid rgba(104, 103, 103, 0.505);
+                    text-align: center;
+
+                    img {
+                        border-radius: 999%;
+                        width: 130px;
+                    }
+
+                }
+
+                .profile-details{
+                    padding: 0 20px;
+                    .profile-name{
+                        display: block;
+                        font-size: 25px;
+                        font-weight: 600;
+                    }
+                    .profile-role{
+                        display: block;
+                        font-size: 18px;
+                    }
+                }
+            }
+
+        
+
+
+            .content{
+                margin: 20px 0;
+            }
+        }
+
+    }
+
+    .Board{
+        width: 100%;
+        height: 200vh;
+        background-color: whitesmoke;
+    }
+
+
+    .line {
+
+        position: absolute;
+        color: black;
+        top: 0px;
+        right: 400px;
+    }
+
+    .Circle {
+
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        left: 10px;
+
+    }
+    .Circle-1 {
+
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        left: 10px;
+
+    }
+
+}

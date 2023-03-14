@@ -1,0 +1,98 @@
+.headerConatiner{
+    height: 20vh;
+    width: 100%;
+    background-color: #161616;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    border-bottom: 1px solid rgba(245, 245, 245, 0.43);
+
+    .logoDiv{
+        height: 100%;
+        img{
+            height: 18vh;
+            width:140px;
+           
+        }
+    }
+
+    .clubName{
+        color: white;
+        .H1{
+            font-size: 50px;
+            font-weight: 600;
+            display: block;
+            letter-spacing: 4px;
+            .X{
+                color: rgb(47, 210, 255);
+            }
+
+        }
+        .clgName{
+            font-size: 25px;
+        }
+
+
+    }
+
+}
+
+@media only screen and (max-width: 950px) {
+
+    .headerConatiner{
+        .logoDiv{
+            height: 100%;
+            img{
+                height: 18vh;
+                width:80px;
+                margin-top: 5px;
+               
+            }
+        }
+        .clubName{
+            .H1{
+                font-size: 30px;
+                margin:10px 0 10px 0;
+            }
+            .clgName{
+                font-size: 15px;
+                
+
+            }
+        }
+    }
+    
+}
+
+
+
+
+@media only screen and (max-width: 480px) {
+
+    .headerConatiner{
+        height: 14vh;
+        .logoDiv{
+            height: 100%;
+            img{
+                height: 40px;
+                width:40px;
+                margin-top: 15px;
+               
+            }
+        }
+        .clubName{
+            .H1{
+                font-size: 18px;
+                margin:10px 0 0 0;
+                letter-spacing: normal;
+            }
+            .clgName{
+                font-size: 8px;
+                
+
+            }
+        }
+    }
+    
+}
+

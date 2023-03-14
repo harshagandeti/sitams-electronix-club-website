@@ -1,0 +1,105 @@
+// web development page 
+.web-Main {
+
+    background-color: white;
+    font-weight: 500;
+    text-align: justify;
+
+    .Container {
+        width: 80%;
+        display: flex;
+        margin: 0 auto;
+
+    }
+
+    .OutletDiv {
+        width: 80%;
+        margin: 0 auto;
+        padding: 40px 0;
+        background-color: whitesmoke;
+    }
+
+
+    .Nav {
+        height: 10vh;
+        text-align: center;
+        font-size: 30px;
+        font-weight: 800;
+        color: white;
+        background-color: green;
+        padding: 5px;
+        letter-spacing: 0.1rem;
+    }
+
+
+
+    img {
+        width: 80%;
+        margin: 25px auto;
+    }
+
+    b {
+        color: orangered;
+        font-weight: 600;
+    }
+
+    a {
+        color: rgb(42, 159, 0);
+    }
+}
+
+
+
+// Machine learning
+
+
+.ML-Main {
+    background-color: white;
+    font-weight: 500;
+
+    .Nav {
+        height: 10vh;
+        text-align: center;
+        font-size: 30px;
+        font-weight: 800;
+        color: white;
+        background-color: green;
+        padding: 5px;
+        letter-spacing: 0.1rem;
+    }
+
+    .OutletDiv {
+        width: 80%;
+        margin: 0 auto;
+        line-height: 1.8rem;
+        background-color: whitesmoke;
+
+        .content {
+            padding: 40px 40px;
+
+            h2 {
+                color: orangered;
+                margin: 10px 0;
+            }
+
+            h3 {
+                color: #0f80d6;
+                margin: 10px 0;
+
+            }
+
+            h4 {
+                color: rgb(198, 0, 0);
+            }
+
+            strong {
+                color: #3EC70B;
+            }
+
+            img{
+                margin: 25px;
+                width: 80%;
+            }
+        }
+    }
+}

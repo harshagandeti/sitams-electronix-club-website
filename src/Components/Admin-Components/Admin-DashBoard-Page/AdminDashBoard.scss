@@ -1,0 +1,129 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800&family=Kanit:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
+
+
+.ADBMainDiv {
+    background-color: whitesmoke;
+    width: 100%;
+    height: 150vh;
+    padding: 10px;
+
+    button {
+        display: block;
+        width: 100%;
+        height: 80px;
+        font-size: 30px;
+        font-weight: 600;
+        color: white;
+        background-color: #FF0303;
+        border: 1px solid white;
+        margin: 40px 0 40px 0;
+        cursor: pointer;
+        border-radius: 10px;
+
+        &:hover {
+            background: #d50303;
+        }
+    }
+
+    .headerContainer {
+        display: flex;
+        background-color: white;
+        width: 100%;
+        height: 30vh;
+
+        .headerLeft {
+            width: 20%;
+            background-color: aliceblue;
+            border-radius: 5px;
+            padding: 20px 0 0px 20px;
+
+            .adminLogo {
+                width: 80%;
+                height: 90%;
+            }
+        }
+
+        .headerRight {
+            width: 70%;
+            color: #3A98B9;
+            font-family: 'Fira Sans', sans-serif;
+            font-family: 'Kanit', sans-serif;
+            padding: 20px;
+            height: 90%;
+
+            .H1 {
+                font-size: 50px;
+                font-weight: 600;
+            }
+
+            .H2 {
+                font-size: 30px;
+                font-weight: 600;
+            }
+        }
+    }
+
+
+
+
+
+    .MainDiv {
+        display: flex;
+        width: 100%;
+        height: max-content;
+        background-color: whitesmoke;
+        margin: 10px 0 0 0;
+
+        .mainLeft {
+            width: 300px;
+            height: 400px;
+            background-color: white;
+        }
+
+        .mainRight {
+            display: flex;
+            flex-wrap: wrap;
+
+            .link {
+                text-decoration: none;
+                color: black;
+                border: none;
+                margin: 0;
+                padding: 0;
+            }
+
+            .Buttons {
+                display: flex;
+                // justify-content: center;
+                align-items: center;
+                background-color: white;
+                color: black;
+                cursor: pointer;
+                padding: 10px;
+                width: 480px;
+                height: 120px;
+                border-radius: 10px;
+                margin: 0 0 40px 40px;
+               
+                &:hover {
+                    background-color: rgb(187, 187, 187);
+                }
+
+            }
+
+            .Buttons .img {
+                width: 100px;
+                height: 100px;
+
+            }
+
+            .Buttons span {
+                font-size: 30px;
+                font-weight: 500;
+                font-style: normal;
+                padding: 0 0 0 20px;
+            }
+        }
+    }
+
+}

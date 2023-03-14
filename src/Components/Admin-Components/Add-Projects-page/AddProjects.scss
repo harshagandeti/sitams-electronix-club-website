@@ -1,0 +1,111 @@
+.AP-Main-Div{
+    background-color: white;
+    width: 100%;
+    height: 120vh;
+    padding: 20px;
+    
+    .container-box{
+        width: 80%;
+        margin: 20px auto;
+        display: flex;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        .imgDiv{
+            background-color: aquamarine;
+            // border-top-left-radius: 20px;
+            // border-bottom-left-radius: 20px;
+            .img{
+                width: 100%;
+            }
+        }
+        .container{
+            width: 50%;
+            padding: 20px 0 0 20px;
+            .H1{
+                color: rgb(255, 94, 0);
+                font-size: 30px;
+                font-weight: 600;
+            }
+            .form{
+             
+                display: flex;
+                padding: 10px;
+                .label{
+                    margin-bottom: 10px;
+                    display: block;
+                    font-size: 24px;
+                    font-weight: 600;
+                    color: black;
+                    .label-radio{
+                        font-size: 18px;
+                        font-weight: 500;
+                    }
+                }
+        
+                .input{
+                    width: 100%;
+                    height: 40px;
+                    padding: 12px;
+                    font-weight: 600;
+                    font-size: 18px;
+                    outline: none;
+                    color: rgb(0, 0, 0);
+                    &::placeholder{
+                        color: rgb(0, 153, 255);
+                    }
+                }
+
+                button{
+                    height: 40px;
+                    width: 100%;
+                    font-weight: 600;
+                    font-size: 20px;
+                    color: white;
+                    border: 1px solid white;
+                    border-radius: 5px;
+                    margin-top: 20px;
+                    background-color: #3EC70B;
+                   cursor: pointer;
+
+                    &:hover{
+                        background-color: #2e9409;
+                    }
+                }
+
+                .input-radio{
+                   width: 60px;
+                   cursor: pointer;
+                }
+
+                .input-file{
+                    color: rgb(0, 153, 255);
+                    cursor: pointer;
+                    font-size: 18px;
+                    font-weight: 600;
+                    margin-top: 10px;
+                    &::-webkit-file-upload-button{
+                        background-color:#FF0303 ;
+                        color: white;
+                        border: 1px solid white;
+                        height: 35px;
+                        font-weight: 600;
+                        border-radius: 5px;
+                        cursor: pointer;
+                        &:hover{
+                            background-color: #d50303;
+                        }
+    
+                    }
+                  
+
+                }
+            }
+
+        }
+      
+       
+    }
+    
+   
+
+
+}
