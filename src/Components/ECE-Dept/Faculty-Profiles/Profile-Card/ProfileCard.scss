@@ -1,0 +1,91 @@
+.Card-Main-Div {
+    width: 280px;
+    height: 350px;
+    background-color: #fff;
+    margin: 20px;
+    box-shadow: 1px 10px 10px 2px rgba(66, 66, 66, 0.717);
+    position: relative;
+
+    .Upper-Container {
+        width: 100%;
+        height: 100px;
+        background-image: linear-gradient(to right, rgb(255, 51, 0), blue);
+
+        .img-div {
+            width: 120px;
+            height: 120px;
+            transform: translate(80px, 45px);
+            border-radius: 50%;
+
+
+            img {
+                width: 120px;
+                height: 120px;
+                border-radius: 50%;
+                border: 2px solid #8e00b9;
+
+            }
+        }
+    }
+
+    .lower-container {
+        .lower-content {
+            text-align: center;
+
+            .Name-Div {
+                text-align: center;
+
+                h4 {
+                    // color: hsl(21, 62%, 45%);
+                    color: black;
+                    margin: 80px 0 10px 0;
+                    font-size: 18px;
+                }
+
+
+            }
+
+            h5 {
+                margin: 5px 0;
+                font-weight: normal;
+            }
+
+        }
+
+
+
+    }
+
+    .disable {
+        display: none;
+    }
+
+    .Btn-div {
+        margin-top: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+
+        button {
+            // width: 150px;
+            // height: 30px;
+            // border: 1px solid white;
+            // border-radius: 5px;
+            // background-color: #001eff;
+            cursor: pointer;
+            // color: white;
+            // font-size: 14px;
+            // font-weight: 600;
+
+
+            // &:hover {
+            //     // background-color: #000cb4;
+            //     outline: auto;
+            //     outline-color: aqua;
+            //     outline-offset: 4px;
+
+            // }
+        }
+
+    }
+}

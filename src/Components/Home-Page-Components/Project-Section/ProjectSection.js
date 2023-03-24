@@ -15,7 +15,7 @@ const ProjectSection = () => {
         <ProjectCard />
       </div>
       <div className="btnPrs">
-        <span>Read More Projects </span>
+        <span>See More </span>
         <RxDoubleArrowRight className="rightArrow" size={20} />
       </div>
     </div>

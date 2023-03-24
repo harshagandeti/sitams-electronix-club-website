@@ -4,6 +4,10 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "../../../index";
+import { Password } from 'primereact/password';
+import "primeicons/primeicons.css";
+import "primereact/resources/primereact.min.css";
+import "primereact/resources/themes/lara-light-indigo/theme.css";
 
 const AdminAuth = (props) => {
   const usenavigate = useNavigate();
@@ -23,29 +27,7 @@ const AdminAuth = (props) => {
     e.preventDefault();
     console.log(username);
     console.log(password);
-    // if (Validation()) {
-    //     ///implentation
-    //     // console.log('proceed');
-    //     fetch("http://localhost:4040/data/" + username).then((res) => {
-    //         return res.json();
-    //     }).then((resp) => {
-    //         //console.log(resp)
-    //         if (Object.keys(resp).length === 0) {
-    //             toast.error('Please Enter valid username');
-    //         } else {
-    //             if (resp.password === password) {
-    //                 toast.success('Success');
-    //                 sessionStorage.setItem('username',username);
-    //                 sessionStorage.setItem('userrole',resp.role);
-    //                 usenavigate('/')
-    //             }else{
-    //                 toast.error('Please Enter valid credentials');
-    //             }
-    //         }
-    //     }).catch((err) => {
-    //         toast.error('Login Failed due to :' + err.message);
-    //     });
-    // }
+
 
     Validation();
     LoginProcess();
@@ -55,7 +37,7 @@ const AdminAuth = (props) => {
   };
 
   const LoginProcess = () => {
-    if (username.length != 0 && password.length != 0) {
+    if (username.length !== 0 && password.length !== 0) {
       //user name verification
       if (data.username === username && data.password === password) {
         toast.success("Login Successfully",{
@@ -77,23 +59,7 @@ const AdminAuth = (props) => {
         });
       }
 
-      //password verification
-      // if (data.password === password) {
-      //   // useNavigate("/")
-      // } else {
-      //   toast.error("Please enter valid password", {
-      //     position: toast.POSITION.TOP_CENTER,
-      //   });
-        
-      // }
-
-
-
-
-      // toast.success("Login Successfully",{
-      //   position:toast.POSITION.TOP_CENTER
-      // })
-      // usenavigate("/");
+  
     }
   };
   const Validation = () => {
@@ -137,11 +103,12 @@ const AdminAuth = (props) => {
               placeholder="Password"
               name="password"
               autoComplete="current-password"
+              toggleMask
               value={password}
               onChange={(e) => {
                 setPassword(e.target.value);
               }}
-            ></input>
+            />
             <button>Login</button>
           </form>
         </div>

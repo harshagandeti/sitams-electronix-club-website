@@ -1,8 +1,11 @@
 import React from 'react'
+import "./FacultyProfile.scss"
+import Card from "./Profile-Card/ProfileCard"
 
 const FacultyProfile = () => {
   return (
-    <div>FacultyProfile</div>
+    <div className='Main-Div'>
+    <Card/></div>
   )
 }
 

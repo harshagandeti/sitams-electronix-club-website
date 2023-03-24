@@ -103,7 +103,9 @@
                 width: 480px;
                 height: 120px;
                 border-radius: 10px;
-                margin: 0 0 40px 40px;
+                margin: 0 0 20px 20px;
+                box-shadow: 1px 2px 2px 1px rgba(0, 0, 0, 0.547);
+
                
                 &:hover {
                     background-color: rgb(187, 187, 187);
@@ -126,4 +128,160 @@
         }
     }
 
+
+
+
+}
+@media only screen and (max-width:991px) {
+    .ADBMainDiv {
+        height: max-content;
+        .MainDiv {
+            .mainLeft{
+                display: none;
+            }
+        }
+        button {
+            display: block;
+            width: 100%;
+            height: 80px;
+            font-size: 30px;
+            margin: 20px 0 20px 0;
+            box-shadow: 1px 2px 2px 1px rgba(0, 0, 0, 0.547);
+
+          
+            &:hover {
+                background: #d50303;
+            }
+        }
+        .headerContainer {
+
+            .headerLeft {
+                padding: 10px 0 0px 10px;
+    
+                .adminLogo {
+                    width: 95%;
+                    height: 95%;
+                }
+            }
+    
+            .headerRight {
+    
+                .H1 {
+                    font-size: 40px;
+
+                }
+    
+                .H2 {
+                    font-size: 20px;
+                    
+                }
+            }}
+    }
+    
+    
+    
+}
+@media only screen and (max-width:500px) {
+    .ADBMainDiv {
+        height: max-content;
+       
+    .MainDiv {
+        display: flex;
+        width: 100%;
+        height: max-content;
+        background-color: whitesmoke;
+        margin: 10px 0 0 0;
+
+        .mainLeft {
+          display: none;
+          width: 0;
+          height: 0;
+        }
+
+        .mainRight {
+            display: flex;
+            flex-wrap: wrap;
+
+            .link {
+               
+                width: 100%;
+            }
+
+            .Buttons {
+                padding: 10px;
+                width: 100%;
+                height: 80px;
+                border: 1px solid grey;
+                border-radius: 10px;
+                margin: 0 0 10px 10px;
+                box-shadow: 1px 2px 2px 1px rgba(0, 0, 0, 0.547);
+               
+                &:hover {
+                    background-color: rgb(187, 187, 187);
+                }
+
+            }
+
+            .Buttons .img {
+                width: 50px;
+                height: 50px;
+
+            }
+
+            .Buttons span {
+                font-size: 14px;
+                padding: 0 0 0 10px;
+            }
+        }
+    }  button {
+        display: block;
+        width: 100%;
+        height: 50px;
+        font-size:16px;
+        margin: 10px 0 10px 0;
+        box-shadow: 1px 2px 2px 1px rgba(0, 0, 0, 0.547);
+
+      
+        &:hover {
+            background: #d50303;
+        }
+    }
+        .headerContainer {
+            display: flex;
+            background-color: white;
+            width: 100%;
+            height: 20vh;
+          
+            .headerLeft {
+                width: 20%;
+                background-color: aliceblue;
+                border-radius: 5px;
+                padding: 5px 0 0px 5px;
+    
+                .adminLogo {
+                    width: 90%;
+                    height: 90%;
+                }
+            }
+    
+            .headerRight {
+                width: 70%;
+                padding: 20px;
+                height: 90%;
+    
+                .H1 {
+                    font-size: 20px;
+
+                }
+    
+                .H2 {
+                    font-size: 10px;
+
+                }
+            }
+        }
+    
+    }
+    
+    
 }

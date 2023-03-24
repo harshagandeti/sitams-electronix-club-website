@@ -1,16 +1,23 @@
-import React from 'react'
+import React, { useState } from 'react'
 import "./AboutUs.scss"
 import { Line , Circle } from '../Home-Page-Components/Back-Ground-Objects/BackGroundObj'
 import SectionHeading from '../Section-Heading/SectionHeading'
 import Profile from "../Images/Profile-1.png"
+import {FiEdit} from "react-icons/fi"
 
 const AboutUs = () => {
+    const [isAuth,setIsAuth]=useState(false)
+    const editHandler=()=>{
+
+    }
   return (
     <div className='Abtus-Main-Div'>
     <SectionHeading heading='About us' />
    
     <div className='Abt-Containers'>
     <div className='Container'>
+    <div className={isAuth?'edit-icon':"disable"} ><FiEdit className='icon'  onClick={editHandler} size={25} color=" rgb(0, 86, 139)" /></div>
+ 
     <div className='header'>
         <div className='profile-img'>
             <img src={Profile}></img>
@@ -26,6 +33,7 @@ const AboutUs = () => {
     </div>
     </div>
     <div className='Container'>
+    <div className={isAuth?'edit-icon':"disable"} ><FiEdit className='icon' onClick={editHandler} size={25} color=" rgb(0, 86, 139)" /></div>
     <div className='header'>
         <div className='profile-img'>
             <img src={Profile}></img>
@@ -41,6 +49,7 @@ const AboutUs = () => {
     </div>
     </div>
     <div className='Container'>
+    <div className={isAuth?'edit-icon':"disable"} ><FiEdit className='icon' onClick={editHandler} size={25} color=" rgb(0, 86, 139)" /></div>
     <div className='header'>
         <div className='profile-img'>
             <img src={Profile}></img>

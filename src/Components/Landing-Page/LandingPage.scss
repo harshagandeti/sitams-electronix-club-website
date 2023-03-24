@@ -11,7 +11,7 @@
 .landingPageClubName span{
     color:rgb(47, 210, 255);
 }
-.btn {
+.Btn {
     border: 2px solid white;
     margin-top: 40px;
     margin-left: 38px;
@@ -21,22 +21,18 @@
     cursor: pointer;
     display: flex;
     justify-content: space-between;
-    width: 20vw;
+    width: 200px;
+    &:hover{
+        background-color: white;
+        color: black;
+       font-weight: 600;
+    }
     .rightArrow{
         size: 25;
-        color: red;
     }
-}
-.btn span {
-    margin-right: 40px;
-
+  
 }
 
-.btn:hover{
-    background-color: white;
-    color: black;
-   font-weight: 600;
-}
 
 .landingPageDiv .landingPageText {
     transition-delay: 0.5s;
@@ -85,7 +81,7 @@
         line-height: 50px;
         letter-spacing: .12em;
         /* margin-bottom: 2rem; */
-        padding: 180px 0 0 30px;
+        padding: 180px 0 0 10px;
 
 
     }
@@ -97,24 +93,25 @@
         line-height: .2em;
         font-size: 16px;
         letter-spacing: .12em;
-        padding: 0 0 0 34px;
+        padding: 0 0 0 14px;
     }
-    .btn {
-        margin-top: 80px;
-        margin-left: 34px;
+    .Btn{
+        margin-top: 40px;
+        margin-left: 14px;
         padding: 6px;
         font-weight: 500;
         font-size: 16px;
         width: 200px;
         .rightArrow{
             size: 16;
-            color: red;
+            color: white;
+            margin-top: 4px;
         }
     }
 
 
 }
-@media (max-width:480px) {
+@media (max-width:500px) {
 
 .landingPageDiv{
     height: 40vh;
@@ -127,7 +124,7 @@
         line-height: 10px;
         letter-spacing: .1em;
         /* margin-bottom: 2rem; */
-        padding: 100px 0 0 30px;
+        padding: 100px 0 0 10px;
         width: 100%;
     
 
@@ -141,23 +138,23 @@
         line-height: 0;
         font-size: .48rem;
         letter-spacing: .1em;
-        padding: 0 0 0 30px;
+        padding: 0 0 0 10px;
     }
 
-    .btn {
-        border: 2px solid white;
+    .Btn {
+        border: 1px solid white;
         margin-top: 14px;
-        margin-left: 30px;
-        padding: 6px;
+        margin-left: 10px;
+        padding: 4px;
         font-weight: 500;
-        font-size: 10px;
+        font-size: 8px;
         cursor: pointer;
         display: flex;
         justify-content: space-between;
-        width: 160px;
+        width: 120px;
         .rightArrow{
-            size: 16;
-            color: red;
+            size: 20;
+            margin-top: 2px;
         }
     }
 

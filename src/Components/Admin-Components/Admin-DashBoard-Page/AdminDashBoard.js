@@ -62,14 +62,18 @@ const [isAuth,setIsAuth]=useState(false)
 
           </div>
           </Link>
+          <Link className="link" to="/admin-add-faculty">
+          <div className="Buttons">
+            <img className="img" src={EventImage}></img>
+            <span>Add Faculty Profile</span>
+          </div>
+          </Link>
+          <Link className="link" to="/admin-add-events">
           <div className="Buttons">
             <img className="img" src={EventImage}></img>
             <span>Add Events</span>
           </div>
-          <div className="Buttons">
-            <img className="img" src={EventImage}></img>
-            <span>Add Events</span>
-          </div>
+          </Link>
           <div className="Buttons">
             <img className="img" src={EventImage}></img>
             <span>Add Events</span>

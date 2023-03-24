@@ -69,8 +69,8 @@ const NavBar = () => {
         <Link className="link" to="/domain-page">
           Domains
         </Link>
-        <Link className="link" to="/">
-          Activities
+        <Link className="link" to="/events">
+          Events
         </Link>
         <Link className="link" to="/ece-dept">
           ECE Dept

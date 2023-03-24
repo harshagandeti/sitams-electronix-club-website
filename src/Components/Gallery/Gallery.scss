@@ -12,13 +12,6 @@
 
 
 .galleryWrap {
-  /* display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  align-items: center;
-  justify-content: center;
-  max-width: 620px;
-  margin: 0 auto; */
 
   -webkit-column-count: 3;
   -moz-column-count: 3;
@@ -31,8 +24,6 @@
 }
 
 .galleryWrap .single  {
-  /* width: 200px;
-  cursor: pointer; */
   height: max-content;
   width: 100%;
   background-color: whitesmoke;
@@ -160,7 +151,10 @@ font-weight: 600;
 
 
 
-@media (max-width:480px) {
+@media (max-width:500px) {
+  .GalleryMainDiv{
+    padding: 0 5px;
+  }
   .galleryWrap {
     -webkit-column-count: 1;
     -moz-column-count: 1;
@@ -168,6 +162,11 @@ font-weight: 600;
     -webkit-column-width: 100%;
     -moz-column-width: 100%;
     column-width: 100%;
+    padding:0px;
+
+  }
+  .galleryWrap .single  {
+    margin:5px 0px;
 
   }
 }

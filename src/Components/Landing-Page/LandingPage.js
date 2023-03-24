@@ -26,7 +26,7 @@ const LandingPage = () => {
           />
         </span>
       </div>
-      <div className="btn">
+      <div className="Btn">
         <span>Know About Us</span>
         <RxDoubleArrowRight className="rightArrow"  />
       </div>

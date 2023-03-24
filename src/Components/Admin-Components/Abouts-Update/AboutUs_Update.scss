@@ -5,7 +5,8 @@
     color: black;
     padding: 20px 0 0 0;
     position: relative;
-    button{
+
+    button {
         height: 40px;
         width: 100%;
         color: white;
@@ -16,7 +17,8 @@
         margin: 10px 0 20px 0;
         border-radius: 5px;
         cursor: pointer;
-        &:hover{
+
+        &:hover {
             background-color: #2ba000;
         }
     }
@@ -51,7 +53,7 @@
 
 
 
-                    
+
 
                 }
 
@@ -156,21 +158,6 @@
 
 
 }
-// button{
-//     height: 40px;
-//     width: 100%;
-//     color: white;
-//     background-color: #3EC70B;
-//     border: 1px solid white;
-//     font-size: 20px;
-//     font-weight: 600;
-//     margin: 10px 0 20px 0;
-//     border-radius: 5px;
-//     cursor: pointer;
-//     &:hover{
-//         background-color: #2ba000;
-//     }
-// }
 
 
 #input-file {
@@ -188,8 +175,168 @@
         font-weight: 600;
         border-radius: 5px;
         cursor: pointer;
+
         &:hover {
             background-color: #d50303;
+        }
+
+    }
+
+}
+
+@media screen and (max-width:500px) {
+    .Abt-Main-Div {
+        width: 100%;
+        height: 150vh;
+        background-color: white;
+        color: black;
+        padding: 20px 0 0 0;
+        position: relative;
+
+        button {
+            height: 30px;
+            width: 100%;
+            color: white;
+            background-color: #3EC70B;
+            border: 1px solid white;
+            font-size: 16px;
+            font-weight: 600;
+            margin: 10px 0 20px 0;
+            border-radius: 2px;
+        }
+
+
+        .Abt-Containers {
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            justify-content: center;
+            margin: 5px 0px;
+
+            .Container {
+                width: 95%;
+                height: fit-content;
+                background-color: whitesmoke;
+                margin: 10px 10px;
+                border-radius: 10px;
+                z-index: 1;
+                padding: 10px 5px;
+
+                .header {
+                    display: flex;
+                    align-items: center;
+                    flex-direction: column;
+                    padding: 0 10px 20px 0;
+                    height: 40%;
+                    width: 100%;
+                    border-bottom: 2px solid rgba(104, 103, 103, 0.505);
+
+                    #dailog {
+                        width: 400px;
+
+                    }
+
+                    .profile-img {
+                        width: 100%;
+                        border-right: 0;
+                        border-bottom: 2px solid rgba(104, 103, 103, 0.505);
+                        text-align: center;
+
+                        img {
+                            border-radius: 999%;
+                            width: 130px;
+                            cursor: pointer;
+                        }
+
+
+                    }
+
+                    .profile-details {
+                        padding: 0px;
+
+
+                        .Name {
+                            font-size: 18px;
+
+                            height: 30px;
+                            background-color: rgb(186, 184, 184);
+
+                            &:hover {
+                                outline: auto;
+                                outline-color: rgb(0, 221, 255);
+                                outline-offset: 4px;
+                            }
+
+                            .input-Text {
+                                outline: none;
+                                margin-left: 0px;
+                                padding: 10px;
+                                font-size: 16px;
+                                border: 0;
+                                border-radius: 0;
+                                width: 100%;
+                            }
+
+                            .p-inputgroup-addon {
+                                background-color: rgb(186, 184, 184);
+                                outline: none;
+                                border: 0;
+                                margin-left: 0;
+
+                            }
+
+
+                        }
+
+
+
+                    }
+                }
+
+
+
+
+                .content {
+                    margin: 10px 0;
+
+                    #inputArea {
+                        padding: 5px;
+                        outline-color: rgb(0, 221, 255);
+                        outline-offset: 2px;
+                        width: 100%;
+                    }
+                }
+            }
+
+        }
+
+        .Board {
+            display: none;
+        }
+
+
+        .line {
+            display: none;
+        }
+
+        .Circle {
+            display: none;
+
+        }
+
+
+
+    }
+
+
+    #input-file {
+        font-size: 14px;
+        font-weight: 600;
+
+        &::-webkit-file-upload-button {
+            height: 25px;
+            border-radius: 2px;
+
         }
 
     }

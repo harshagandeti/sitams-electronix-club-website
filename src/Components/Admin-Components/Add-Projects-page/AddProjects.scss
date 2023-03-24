@@ -47,27 +47,41 @@
                     padding: 12px;
                     font-weight: 600;
                     font-size: 18px;
-                    outline: none;
+                    outline-color:cyan;
                     color: rgb(0, 0, 0);
                     &::placeholder{
                         color: rgb(0, 153, 255);
                     }
                 }
 
-                button{
-                    height: 40px;
+                .section{
+                    display: flex;
                     width: 100%;
-                    font-weight: 600;
-                    font-size: 20px;
-                    color: white;
-                    border: 1px solid white;
-                    border-radius: 5px;
                     margin-top: 20px;
-                    background-color: #3EC70B;
-                   cursor: pointer;
-
-                    &:hover{
-                        background-color: #2e9409;
+                    button{
+                        height: 40px;
+                        border: 1px solid white;
+                        font-size: 20px;
+                        font-weight: 600;
+                        width: 50%;
+                        &:nth-child(1) {
+                            background-color: #3EC70B;
+                            color: white;
+        
+                            &:hover {
+                                background-color: #2ba000;
+                            }
+        
+                           
+                        }
+                        &:nth-child(2) {
+                            background-color: rgb(255, 68, 0);
+                            color: white;
+        
+                            &:hover {
+                                background-color: rgb(255, 0, 0);
+                            }
+                        }
                     }
                 }
 
@@ -108,4 +122,152 @@
    
 
 
+}
+
+@media only screen and (max-width:500px) {
+    .AP-Main-Div{
+        width: 100%;
+        height: fit-content;
+
+        
+        .container-box{
+            width: 100%;
+            margin: 20px auto;
+            display: flex;
+            flex-direction: column;
+
+            .container{
+                width: 100%;
+                padding: 10px 0 0 10px;
+                margin: 0px;
+                .H1{
+                    font-size: 16px;
+
+                }
+                .form{
+                    padding: 0px;
+                    .label{
+                        font-size: 14px;
+
+                    }
+            
+                    .input{
+                        width: 80%;
+                        height: 30px;
+                        padding: 5px;
+                        font-size: 14px;
+                    }
+    
+                    button{
+                        height: 30px;
+                        
+                        font-size: 14px;
+                        margin-bottom: 10px;
+                       cursor: pointer;
+
+                    }
+    
+                    .input-radio{
+                       width: 60px;
+                       cursor: pointer;
+                    }
+    
+                    .input-file{
+                        color: rgb(0, 153, 255);
+                        cursor: pointer;
+                        font-size: 14px;
+                        font-weight: 600;
+                        margin-top: 0;
+                        &::-webkit-file-upload-button{
+                            height: 25px;
+                            border-radius: 2px;
+
+        
+                        }
+                      
+    
+                    }
+                }
+    
+            }
+          
+           
+        }
+        
+       
+    
+    
+    }
+    
+    
+}
+@media only screen and (max-width:991px) {
+    .AP-Main-Div{
+        width: 100%;
+        height: fit-content;
+
+        
+        .container-box{
+            width: 80%;
+            margin: 20px auto;
+            display: flex;
+            flex-direction: column;
+
+            .container{
+                width: 100%;
+                padding: 10px 0 0 10px;
+                margin: 0px;
+                .H1{
+                    font-size: 20px;
+
+                }
+                .form{
+                    width: 100%;
+                    padding: 0px;
+                    .label{
+                        font-size: 16px;
+
+                    }
+            
+                    .input{
+                        width: 100%;
+                        height: 30px;
+                        padding:10px  15px;
+                        font-size: 16px;
+                    }
+    
+    
+                    .input-radio{
+                       width: 60px;
+                       cursor: pointer;
+                    }
+    
+                    .input-file{
+                        color: rgb(0, 153, 255);
+                        cursor: pointer;
+                        font-size: 14px;
+                        font-weight: 600;
+                        margin-top: 0;
+                        &::-webkit-file-upload-button{
+                            height: 25px;
+                            border-radius: 2px;
+
+        
+                        }
+                      
+    
+                    }
+                }
+    
+            }
+          
+           
+        }
+        
+       
+    
+    
+    }
+    
+    
 }
