@@ -16,7 +16,10 @@ import AddImages from "./Components/Admin-Components/Add-images-Page/AddImages";
 import AddProjects from "./Components/Admin-Components/Add-Projects-page/AddProjects";
 import AboutUs_Update from "./Components/Admin-Components/Abouts-Update/AboutUs_Update";
 import ECE_Dept from "./Components/ECE-Dept/ECE_Dept";
-import Testmonials from "./Components/Home-Page-Components/TestMonials/Testmonials";
+import Testmonials from "./Components/Home-Page-Components/TestMonials/Testmonials"
+import AboutDept from "./Components/ECE-Dept/About-Dept/AboutDept";
+import FacultyProfile from "./Components/ECE-Dept/Faculty-Profiles/FacultyProfile";
+import Labs from "./Components/ECE-Dept/Labs/Labs"
 
 function App() {
   return (
@@ -39,9 +42,13 @@ function App() {
             <Route path="/admin-add-gallery-img"  element={<AddImages />}></Route>
             <Route path="/domain-web-development"  element={<WebDevelopement />}></Route>
             <Route path="/domain-machine-learning"  element={<MachineLearning />}></Route>
-
-
-            <Route path="/ece-dept"  element={<ECE_Dept />}></Route>
+            <Route path="/domain-machine-learning"  element={<MachineLearning />}></Route>
+          
+            <Route path="/ece-dept"  element={<ECE_Dept />}>
+            <Route path="about-ece-dept" exact element={<AboutDept />}></Route>
+            <Route path="labs"  element={<Labs />}></Route>
+            <Route path="faculty-profiles"  element={<FacultyProfile />}></Route>
+            </Route>
 
 
             

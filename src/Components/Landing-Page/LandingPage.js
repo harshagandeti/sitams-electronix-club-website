@@ -2,6 +2,7 @@ import React from 'react'
 import "./LandingPage.scss"
 import TypewritterEffect from "typewriter-effect";
 import { RxDoubleArrowRight } from "react-icons/rx";
+import { ScrollTop } from 'primereact/scrolltop';
 
 const LandingPage = () => {
   return (
