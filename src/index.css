@@ -8,18 +8,19 @@ body {
 
 }
 ::-webkit-scrollbar{
-  width: 8px;
-  height: 8px;
+  width: 10px;
+  height: 6px;
   background-color: rgb(0, 166, 255);
 }
 ::-webkit-scrollbar-button{
-  width: 8px;
-  height: 8px;
+  width: 6px;
+  height: 6px;
   background-color: rgb(0, 255, 51);
+
 }
 ::-webkit-scrollbar-thumb{
-  width: 8px;
-height: 8px;
+  width: 6px;
+height: 6px;
 
   background-color: rgb(225, 255, 0);
 }

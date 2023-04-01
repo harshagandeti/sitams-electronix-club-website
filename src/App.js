@@ -21,13 +21,20 @@ import AboutDept from "./Components/ECE-Dept/About-Dept/AboutDept";
 import FacultyProfile from "./Components/ECE-Dept/Faculty-Profiles/FacultyProfile";
 import Labs from "./Components/ECE-Dept/Labs/Labs"
 import FullProfile from "./Components/ECE-Dept/Faculty-Profiles/Full-Profile/Card";
-import { About,UG_PG,PhD } from "./Components/ECE-Dept/Faculty-Profiles/Full-Profile/Assets/Components";
 import AddFaculty from "./Components/Admin-Components/Add-Faculty/AddFaculty";
 import Events from "./Components/Events/Events";
 import AddEvents from "./Components/Admin-Components/Add-Events/AddEvents";
+import { useState } from "react";
 
 
 function App() {
+  const [login,setLogin]=useState(null)
+  const [logout,setLogout]=useState(null)
+  const [events,setEvents]=useState([])
+  // console.log("APP:",events)
+
+  console.log("login:- ",login)
+  console.log("logout:- ",logout)
   return (
     <div className="App">
       <div className="landingBackGround">
@@ -39,14 +46,14 @@ function App() {
             <Route path="/" exact element={<Home />}></Route>
             <Route path="/gallery"  element={<Gallery />}></Route>
             <Route path="/projects"  element={<ProjectsPage />}></Route>
-            <Route path="/events"  element={<Events/>}></Route>
+            <Route path="/events"  element={<Events events={[events]}/>}></Route>
             <Route path="/testmonials"  element={<Testmonials />}></Route>
             <Route path="/about-us"  element={<AboutUs />}></Route>
-            <Route path="/admin-auth"  element={<AdminAuth />}></Route>
-            <Route path="/admin-dash-board"  element={<AdminDashBoard />}></Route>
+            <Route path="/admin-auth"  element={<AdminAuth sendProps={data=>setLogin(data)}/>}></Route>
+            <Route path="/admin-dash-board"  element={<AdminDashBoard sendProps={data=>setLogout(data)} />}></Route>
             <Route path="/admin-update-about-us"  element={<AboutUs_Update />}></Route>
             <Route path="/admin-add-project"  element={<AddProjects />}></Route>
-            <Route path="/admin-add-events"  element={<AddEvents />}></Route>
+            <Route path="/admin-add-events"  element={<AddEvents sendEventDetails={data=>setEvents(data)} />}></Route>
             <Route path="/admin-add-faculty"  element={<AddFaculty />}></Route>
             <Route path="/admin-add-gallery-img"  element={<AddImages />}></Route>
             <Route path="/domain-web-development"  element={<WebDevelopement />}></Route>

@@ -54,25 +54,25 @@ const NavBar = () => {
       </div>
 
       <div id="navbar" className={clicked ? "#navbar close" : "navbar"}>
-        <Link className="link" to="/">
+        <Link className="link" onClick={()=>{setClicked(true)}} to="/">
           Home
         </Link>
-        <Link className="link" to="/about-us">
+        <Link  className="link" onClick={()=>{setClicked(true)}} to="/about-us">
           About us
         </Link>
-        <Link className="link" to="/gallery">
+        <Link className="link" onClick={()=>{setClicked(true)}} to="/gallery">
           Gallery
         </Link>
-        <Link className="link" to="/projects">
+        <Link className="link" onClick={()=>{setClicked(true)}} to="/projects">
           Projects
         </Link>
-        <Link className="link" to="/domain-page">
+        <Link className="link" onClick={()=>{setClicked(true)}} to="/domain-page">
           Domains
         </Link>
-        <Link className="link" to="/events">
+        <Link className="link" onClick={()=>{setClicked(true)}} to="/events">
           Events
         </Link>
-        <Link className="link" to="/ece-dept">
+        <Link className="link" onClick={()=>{setClicked(true)}} to="/ece-dept">
           ECE Dept
         </Link>
       </div>

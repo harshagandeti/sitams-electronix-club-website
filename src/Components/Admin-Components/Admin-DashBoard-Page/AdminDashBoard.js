@@ -13,17 +13,20 @@ import { Ripple } from 'primereact/ripple';
 const AdminDashBoard = (props) => {
 
     // for table (project-page) delete funnction
-const [isAuth,setIsAuth]=useState(false)
+const [data,setData]=useState(false)
 
   const Navigate = useNavigate();
 
   const logoutHandler = () => {
     sessionStorage.clear();
+   
+
     toast.success("Logout successfully",{
       position:toast.POSITION.TOP_CENTER,
       theme:"colored"
     })
-    setIsAuth(true)
+    setData(true)
+    props.sendProps(data)
     Navigate("/")
     
   };

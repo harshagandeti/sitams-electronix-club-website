@@ -358,7 +358,7 @@ export const ComputerVision = () => {
 
 export const VLSI = () => {
   return (
-    <div className="damain cv">
+    <div className="domain cv">
       <div className="icon-wrap">
         <svg
           fill="#ffffff"
@@ -422,7 +422,7 @@ export const VLSI = () => {
 };
 export const Antenna = () => {
   return (
-    <div className="damain cv">
+    <div className="domain cv">
       <div className="icon-wrap">
         <svg
           fill="#ffffff"

@@ -29,7 +29,14 @@ const AboutUs = () => {
         </div>
     </div>
     <div className='content'>
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    <p>Dr. K. Gopi is a highly experienced and knowledgeable professor with more than two decades of teaching and research experience in the field of Embedded Systems and Digital Image Processing. He is a reputed scholar and has published 18 research articles in renowned National and International journals. Dr. Gopi is an expert in his field and has a deep understanding of the intricacies of Embedded Systems and Digital Image Processing.
+
+In addition to his expertise, Dr. Gopi is also a student-encouraging professor. He is committed to nurturing and developing the skills and talents of his students, and his teaching methods reflect this commitment. Dr. Gopi is known for his engaging and interactive classroom sessions, where he encourages his students to participate and ask questions. He is always available to help his students and goes above and beyond to provide them with the support and guidance they need to succeed in their academic and professional pursuits. Overall, Dr. K. Gopi is a highly respected and esteemed professor who is dedicated to the growth and development of his students.
+
+
+
+
+.</p>
     </div>
     </div>
     <div className='Container'>

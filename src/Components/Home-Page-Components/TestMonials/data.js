@@ -19,15 +19,15 @@ const people = [
       name: 'Gandeti Harsha Vardhan',
       title: "Club Co-founder And Website Developer",
       quote:
-        'Gastropub sustainable tousled prism occupy. Viral XOXO roof party brunch actually, chambray listicle microdosing put a bird on it paleo subway tile squid umami.',
+        'having an experience over 2 years in website knowledge feel free to contact me if u need any help.',
     },
     {
       id: 3,
       image:img_Chaitanya,
       name: 'M Chaitanya',
-      title: "Club Co-founder",
+      title: "Club Co-founder And front end developer",
       quote:
-        'Drinking vinegar polaroid street art echo park, actually semiotics next level butcher master cleanse hammock flexitarian ethical paleo.',
+        'feel free to contact me',
     },
     {
       id: 4,

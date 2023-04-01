@@ -76,3 +76,89 @@
         }
     }
 }
+
+@media only screen  and (max-width:500px){
+    .Card-Full {
+        width: 100%;
+        height: fit-content;
+        background-color: white;
+        padding: 40px 0;
+    
+        .Container {
+            width: 100%;
+            height: fit-content;
+    
+            .link {
+                border: 0;
+                text-decoration: none;
+            }
+    
+    
+    
+            .upper-container {
+                width: 100%;
+                height: fit-content;
+                display: flex;
+                flex-direction: column;
+                padding: 30px 10px 10px 30px;
+    
+                .img-div {
+                    width: 100%;
+                    height: 150px;
+                    img{
+                        width: 150px;
+                        height: 150px;transform: translate(40px,0);
+                    }
+                }
+    
+                .section-right {
+                    height: 100%;
+                    width: 100%;
+    
+                    .upper-content {
+                        width: 100%;
+                        height: 80%;
+    
+                        .Name {
+                            font-size: 16px;
+                            font-weight: 600;
+                        }
+    
+                        .text-div {
+                            margin: 5px;
+                            font-size: 12px;
+    
+                        }
+    
+                    }
+    
+    
+                    nav {
+                        margin-top: 20px;
+                        width: 100%;
+                        height: 20%;
+                        font-size: 12px;
+    
+                        ul {
+                            height: 100%;
+                            list-style: none;
+                            display: flex;
+                            align-items: center;
+    
+                        }
+                    }
+                }
+            }
+    
+            .lower-container {
+    
+                display: flex;
+                flex-direction: column;
+                width: 100%;
+                overflow: scroll;
+    
+            }
+        }
+    }
+    
+}

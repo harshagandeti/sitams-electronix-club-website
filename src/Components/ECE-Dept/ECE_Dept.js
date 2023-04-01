@@ -38,6 +38,7 @@ const ECE_Dept = () => {
                   role="tab"
                   aria-controls="pills-home"
                   aria-selected="true"
+                  onClick={()=>setHeading("About-ECE")}
                 >
                   About-ECE
                 </button>
@@ -52,6 +53,7 @@ const ECE_Dept = () => {
                   role="tab"
                   aria-controls="pills-profile"
                   aria-selected="false"
+                  onClick={()=>setHeading("Labs")}
                 >
                   Labs
                 </button>
@@ -66,6 +68,7 @@ const ECE_Dept = () => {
                   role="tab"
                   aria-controls="pills-contact"
                   aria-selected="false"
+                  onClick={()=>setHeading("Faculty-Profiles")}
                 >
                   Faculty-Profiles
                 </button>

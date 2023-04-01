@@ -1,15 +1,12 @@
 import { useState } from "react";
 
-import ImgSrc_1 from "./GalleryImg/ImgSrc_1.JPG";
-import ImgSrc_2 from "./GalleryImg/ImgSrc_2.jpg";
-import ImgSrc_3 from "./GalleryImg/ImgSrc_3.jpg";
-import ImgSrc_4 from "./GalleryImg/ImgSrc_4.JPG";
-import ImgSrc_5 from "./GalleryImg/ImgSrc_5.JPG";
-import ImgSrc_6 from "./GalleryImg/ImgSrc_6.JPG";
+import ImgSrc_1 from "./GalleryImg/environment-earth-day-hands-trees-growing-seedlings-bokeh-green-background-female-hand-holding-tree-nature-field-gra-130247647.jpg";
+import ImgSrc_2 from "./GalleryImg/photo-1541963463532-d68292c34b19.jpeg";
+import ImgSrc_3 from "./GalleryImg/Electronics Logo - Made with PosterMyWall.jpg";
 
 // import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { FaBackward, FaForward, FaRegTimesCircle } from "react-icons/fa";
-import { ImCross} from "react-icons/im";
+// import { ImCross} from "react-icons/im";
 
 import "./Gallery.scss";
 import SectionHeading from "../Section-Heading/SectionHeading";
@@ -24,31 +21,31 @@ const WSPGallery = () => {
     },
     {
       _id: 2,
-      img: ImgSrc_2,
-      title:
-        "Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit",
-    },
-    {
-      _id: 3,
       img: ImgSrc_3,
       title:
         "Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit",
     },
     {
+      _id: 3,
+      img: ImgSrc_2,
+      title:
+        "Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit",
+    },
+    {
       _id: 4,
-      img: ImgSrc_4,
+      img: ImgSrc_1,
       title:
         "Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit",
     },
     {
       _id: 5,
-      img: ImgSrc_5,
+      img: ImgSrc_1,
       title:
         "NTraijdfj jnfvlkdgl nvoeij;o je;oirjgegnkdnb nlrigoewi nelijgewiojg kjnglerweng kjnlntrit",
     },
     {
       _id: 6,
-      img: ImgSrc_6,
+      img: ImgSrc_1,
       title:
         "Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit",
     },
@@ -89,7 +86,7 @@ const WSPGallery = () => {
 
       {openModal && (
         <div className="sliderWrap">
-          <ImCross
+        <FaRegTimesCircle
             size={45}
             className="btnClose"
             onClick={handleCloseModal}

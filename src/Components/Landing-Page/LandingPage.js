@@ -1,17 +1,22 @@
-import React from 'react'
-import "./LandingPage.scss"
+import React,{useEffect,useState} from "react";
+import { useNavigate } from "react-router-dom";
+import "./LandingPage.scss";
 import TypewritterEffect from "typewriter-effect";
 import { RxDoubleArrowRight } from "react-icons/rx";
-import { ScrollTop } from 'primereact/scrolltop';
+import { ScrollTop } from "primereact/scrolltop";
+
+
 
 const LandingPage = () => {
+
+
+
   return (
-
-
-
     <div className="landingPageDiv">
       <div className="landingPageText">
-        <div className="landingPageClubName">Sitams Electroni<span>X</span> Club</div>
+        <div className="landingPageClubName">
+          Sitams Electroni<span>X</span> Club
+        </div>
         <span>
           <TypewritterEffect
             options={{
@@ -28,14 +33,11 @@ const LandingPage = () => {
       </div>
       <div className="Btn">
         <span>Know About Us</span>
-        <RxDoubleArrowRight className="rightArrow"  />
+        <RxDoubleArrowRight className="rightArrow" />
       </div>
+
     </div>
+  );
+};
 
-
-
-
-  )
-}
-
-export default LandingPage
+export default LandingPage;

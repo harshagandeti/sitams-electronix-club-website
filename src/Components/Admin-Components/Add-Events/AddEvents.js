@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import "./AddEvents.scss"
 import SectionHeading from '../../Section-Heading/SectionHeading'
 
-const AddEvents = () => {
+const AddEvents = (props) => {
     const [event,setEvent]=useState({
         name:"",
         room:"",
@@ -24,6 +24,7 @@ setEvent({...event,[e.target.name]:e.target.value})
      const submitHandler=(e)=>{
     e.preventDefault()
     console.log(event)
+    props.sendEventDetails(event)
 
     // cancel handler for clear form after submit
     cancelHandler()

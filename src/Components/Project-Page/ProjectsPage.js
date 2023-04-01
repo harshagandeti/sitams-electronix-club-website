@@ -13,16 +13,8 @@ import "primereact/resources/themes/lara-light-indigo/theme.css";
 // import "bootstrap/dist/css/bootstrap.min.css";
 
 const ProjectsPage = (props) => {
-  const [isAuth, setIsAuth] = useState(true);
+  const [isAuth, setIsAuth] = useState(false);
 
-  // const isauthUsername =sessionStorage.getItem("username")
-  // const isauthPassword =sessionStorage.getItem("password")
-  // if (isauthUsername.length !==0 || isauthPassword.length !==0){
-  //   setIsAuth(false)
-
-  // }else{
-  //   setIsAuth(true)
-  // }
 
   const data = [
     {
@@ -161,7 +153,7 @@ const ProjectsPage = (props) => {
                 body={deleteIcon}
                 header="Delete"
               ></Column>
-            </DataTable>;
+            </DataTable>
         
         </div>
       </div>

@@ -1,6 +1,6 @@
 .ECE-Main-Div {
     width: 100%;
-    background-color: white;
+    background-color: black;
 
 
     .video {
@@ -9,18 +9,18 @@
         opacity: 1;
     }
 
-    .back-ground {
-        position: absolute;
-        top: 148px;
-        width: 100%;
-        height: 110vh;
-        background-image: linear-gradient(to right, rgb(4, 4, 4), rgba(47, 47, 47, 0.059));
+    // .back-ground {
+    //     position: absolute;
+    //     top: 0;
+    //     width: 100%;
+    //     height: 700px;
+    //     background-image: linear-gradient(to right, rgb(4, 4, 4), rgba(47, 47, 47, 0.059));
 
-    }
+    // }
 
     .dept-name {
         position: absolute;
-        top: 298px;
+        top: 308px;
         color: white;
         font-size: 60px;
         font-weight: 700;
@@ -37,12 +37,13 @@
     }
 
     .nav-middle {
-        position: absolute;
+        // position: absolute;
         top: 762px;
         width: 100%;
-        height: 90px;
+        height: 100px;
         display: flex;
-       background-color: black;
+        background-color: black;
+        padding: 0 0 10px 0;
 
         .left-nav {
             width: 50%;
@@ -52,7 +53,7 @@
             text-align: center;
             background: white;
             padding-top: 10px;
-            border-radius:60% 50% 100% 0% / 0% 100% 0% 100%  ;
+            border-radius: 60% 50% 100% 0% / 0% 100% 0% 100%;
 
 
 
@@ -68,7 +69,7 @@
                 padding: 0px 20px;
                 border: 2px solid black;
                 line-height: 0;
-                background-color: white;
+                background-color:transparent;
                 z-index: 20;
 
             }
@@ -86,6 +87,18 @@
             align-items: center;
             justify-content: space-around;
             padding: 0 30px 0 30px;
+            .nav {
+        
+
+                .nav-item {
+             
+
+
+                .nav-link{
+                        border-radius: 0;
+                    }
+                }
+            }
 
 
 
@@ -147,20 +160,13 @@
         }
     }
 
-    .container {
-        width: 100%;
-        height: 100vh;
-        background-color: white;
-
-
-    }
 
     .outlet-div {
-        width: 100%;
-        height: fit-content;
+        margin-top: 0px;
+        padding: 20px;
         background-color: white;
-
     }
+
 
 
 }
@@ -171,14 +177,15 @@
             font-size: 40px;
             top: 240px;
         }
-        
-    .back-ground {
-        position: absolute;
-        top: 148px;
-        width: 100%;
-        height: 70vh;
-   
-    }
+
+        // .back-ground {
+        //     position: absolute;
+        //     top: 148px;
+        //     width: 100%;
+        //     height: 70vh;
+
+        // }
+
         .nav-middle {
             display: flex;
             height: 160px;
@@ -217,28 +224,29 @@
 
         }
 
-        .outlet-div{
-            margin-top: 100px;
+        .outlet-div {
+            margin-top: 0px;
         }
 
     }
 
 }
 
-@media only screen and (max-width:480px) {
+@media only screen and (max-width:500px) {
     .ECE-Main-Div {
         .dept-name {
             font-size: 18px;
-            top: 140px;
+            top: 190px;
+            margin: 10px;
         }
 
-        .back-ground {
-            position: absolute;
-            height: 170px;
-            top: 100px;
+        // .back-ground {
+        //     position: absolute;
+        //     height: 220px;
+        //     top: 22vh;
 
 
-        }
+        // }
 
         .nav-middle {
             display: flex;
@@ -246,6 +254,7 @@
             flex-direction: column-reverse;
             top: 250px;
             width: 100%;
+            z-index: 1000;
 
             .left-nav {
                 font-size: 18px;
@@ -264,13 +273,31 @@
             }
 
             .right-nav {
-                height: 35px;
+                height: 40px;
                 width: 100%;
+                padding: 10px 0 0 0;
+
 
                 .nav {
-                    font-size: 10px;
+                    font-size: .8rem;
                     display: flex;
                     flex-direction: row;
+                    align-items: center;
+                    justify-content: none;
+
+                    .nav-item {
+                        height: 30px;
+
+
+                        .nav-link{
+                            height: 25px;
+                            width: max-content;
+                            margin: 0 10px 0 0;
+                            text-align: center;
+                            padding: 0 5px;
+                            border-radius: 0;
+                        }
+                    }
                 }
 
 
@@ -279,9 +306,10 @@
         }
 
 
-.outlet-div{
-    margin-top: 80px;
-}
+        .outlet-div {
+            margin-top: 0px;
+            background-color: white;
+        }
 
 
 

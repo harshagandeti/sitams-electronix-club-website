@@ -1,4 +1,25 @@
 :root {
+    --pink-blue:
+        linear-gradient( to bottom,  hsl(330, 100%, 45.1%) 0%,
+              hsl(331, 89.25%, 47.36%) 8.1%,
+              hsl(330.53, 79.69%, 48.96%) 15.5%,
+              hsl(328.56, 70.89%, 49.96%) 22.5%,
+              hsl(324.94, 63.52%, 50.4%) 29%,
+              hsl(319.21, 54.99%, 50.3%) 35.3%,
+              hsl(310.39, 46.14%, 49.68%) 41.2%,
+              hsl(296.53, 39.12%, 49.7%) 47.1%,
+              hsl(280.63, 42.91%, 53.43%) 52.9%,
+              hsl(265.14, 47.59%, 56.84%) 58.8%,
+              hsl(250.13, 52.52%, 59.88%) 64.7%,
+              hsl(235.88, 59.2%, 60.91%) 71%,
+              hsl(225.81, 68.23%, 57.85%) 77.5%,
+              hsl(218.93, 74.97%, 54.21%) 84.5%,
+              hsl(213.89, 79.63%, 49.97%) 91.9%,
+              hsl(210, 100%, 45.1%) 100%);
+              
+        
+          
+    
     --red:
         linear-gradient(hsl(0, 78.38%, 29.02%) 0%,
             hsl(0, 78.52%, 29.22%) 8.1%,
@@ -18,27 +39,47 @@
             hsl(0, 100%, 45.1%) 100%);
 
     --green:
-  
-        linear-gradient(
-          to bottom,
-          hsl(142.01, 94.56%, 28.82%) 0%,
-          hsl(141.86, 94.59%, 29.02%) 15.2%,
-          hsl(141.28, 94.63%, 29.22%) 27.2%,
-          hsl(140.7, 94.67%, 29.41%) 36.4%,
-          hsl(140.14, 94.7%, 29.61%) 43.3%,
-          hsl(139.03, 94.77%, 30%) 48.4%,
-          hsl(138.37, 94.84%, 30.39%) 52%,
-          hsl(137.32, 94.9%, 30.78%) 54.8%,
-          hsl(136.08, 96.23%, 31.18%) 57.1%,
-          hsl(135.1, 96.27%, 31.57%) 59.5%,
-          hsl(133.21, 96.36%, 32.35%) 62.3%,
-          hsl(131.85, 96.43%, 32.94%) 66.1%,
-          hsl(130.12, 96.51%, 33.73%) 71.3%,
-          hsl(128.12, 96.59%, 34.51%) 78.3%,
-          hsl(126.17, 97.77%, 35.1%) 87.8%,
-          hsl(124, 97.83%, 36.08%) 100%
-        );
-    
+
+        linear-gradient(to bottom,
+            hsl(142.01, 94.56%, 28.82%) 0%,
+            hsl(141.86, 94.59%, 29.02%) 15.2%,
+            hsl(141.28, 94.63%, 29.22%) 27.2%,
+            hsl(140.7, 94.67%, 29.41%) 36.4%,
+            hsl(140.14, 94.7%, 29.61%) 43.3%,
+            hsl(139.03, 94.77%, 30%) 48.4%,
+            hsl(138.37, 94.84%, 30.39%) 52%,
+            hsl(137.32, 94.9%, 30.78%) 54.8%,
+            hsl(136.08, 96.23%, 31.18%) 57.1%,
+            hsl(135.1, 96.27%, 31.57%) 59.5%,
+            hsl(133.21, 96.36%, 32.35%) 62.3%,
+            hsl(131.85, 96.43%, 32.94%) 66.1%,
+            hsl(130.12, 96.51%, 33.73%) 71.3%,
+            hsl(128.12, 96.59%, 34.51%) 78.3%,
+            hsl(126.17, 97.77%, 35.1%) 87.8%,
+            hsl(124, 97.83%, 36.08%) 100%);
+
+
+            --blue-dark:
+  linear-gradient(
+    to bottom,
+    hsl(242.22, 96.43%, 21.96%) 0%,
+    hsl(242.24, 96.21%, 22.28%) 8.1%,
+    hsl(242.3, 95.63%, 23.17%) 15.5%,
+    hsl(242.39, 94.81%, 24.55%) 22.5%,
+    hsl(242.49, 93.89%, 26.33%) 29%,
+    hsl(242.59, 92.95%, 28.42%) 35.3%,
+    hsl(242.69, 92.06%, 30.73%) 41.2%,
+    hsl(242.78, 91.25%, 33.17%) 47.1%,
+    hsl(242.86, 90.54%, 35.66%) 52.9%,
+    hsl(242.93, 89.94%, 38.1%) 58.8%,
+    hsl(242.99, 89.43%, 40.41%) 64.7%,
+    hsl(243.04, 89.02%, 42.49%) 71%,
+    hsl(243.08, 88.7%, 44.27%) 77.5%,
+    hsl(243.1, 88.47%, 45.65%) 84.5%,
+    hsl(243.12, 88.33%, 46.55%) 91.9%,
+    hsl(243.13, 88.28%, 46.86%) 100%
+  );
+
     --blue:
         linear-gradient(to bottom,
             hsl(253.85, 100%, 22.94%) 0%,
@@ -97,48 +138,108 @@
             hsl(0, 0%, 98.55%) 82.9%,
             hsl(0, 0%, 100%) 100%);
 
-            --btn-1:
-                linear-gradient(
-                  to bottom,
-                  hsl(0, 100%, 30%) 0%,
-                  hsl(0, 100%, 30.2%) 15.2%,
-                  hsl(0, 100%, 30.39%) 27.2%,
-                  hsl(0, 100%, 30.78%) 36.4%,
-                  hsl(0, 100%, 30.98%) 43.3%,
-                  hsl(0, 100%, 31.57%) 48.4%,
-                  hsl(0, 100%, 31.96%) 52%,
-                  hsl(0, 100%, 32.55%) 54.8%,
-                  hsl(0, 98.82%, 33.33%) 57.1%,
-                  hsl(0, 98.85%, 34.12%) 59.5%,
-                  hsl(0, 98.88%, 34.9%) 62.3%,
-                  hsl(0, 98.9%, 35.69%) 66.1%,
-                  hsl(0, 98.93%, 36.67%) 71.3%,
-                  hsl(0, 98.96%, 37.65%) 78.3%,
-                  hsl(0, 97.98%, 38.82%) 87.8%,
-                  hsl(0, 98.04%, 40%) 100%
-                );
-            
-           --btn-2: 
-            linear-gradient(
-              to bottom,
-              hsl(0, 100%, 40.98%) 0%,
-              hsl(0, 100%, 41.18%) 15.2%,
-              hsl(0, 100%, 41.37%) 27.2%,
-              hsl(0, 100%, 41.57%) 36.4%,
-              hsl(0, 100%, 41.96%) 43.3%,
-              hsl(0, 100%, 42.35%) 48.4%,
-              hsl(0, 100%, 42.75%) 52%,
-              hsl(0, 100%, 43.33%) 54.8%,
-              hsl(0, 100%, 43.92%) 57.1%,
-              hsl(0, 100%, 44.51%) 59.5%,
-              hsl(0, 100%, 45.29%) 62.3%,
-              hsl(0, 100%, 46.08%) 66.1%,
-              hsl(0, 100%, 47.06%) 71.3%,
-              hsl(0, 100%, 47.84%) 78.3%,
-              hsl(0, 100%, 48.82%) 87.8%,
-              hsl(0, 100%, 50%) 100%
-            );
-        
+    --btn-1:
+        linear-gradient(to bottom,
+            hsl(0, 100%, 30%) 0%,
+            hsl(0, 100%, 30.2%) 15.2%,
+            hsl(0, 100%, 30.39%) 27.2%,
+            hsl(0, 100%, 30.78%) 36.4%,
+            hsl(0, 100%, 30.98%) 43.3%,
+            hsl(0, 100%, 31.57%) 48.4%,
+            hsl(0, 100%, 31.96%) 52%,
+            hsl(0, 100%, 32.55%) 54.8%,
+            hsl(0, 98.82%, 33.33%) 57.1%,
+            hsl(0, 98.85%, 34.12%) 59.5%,
+            hsl(0, 98.88%, 34.9%) 62.3%,
+            hsl(0, 98.9%, 35.69%) 66.1%,
+            hsl(0, 98.93%, 36.67%) 71.3%,
+            hsl(0, 98.96%, 37.65%) 78.3%,
+            hsl(0, 97.98%, 38.82%) 87.8%,
+            hsl(0, 98.04%, 40%) 100%);
+
+    --btn-2:
+        linear-gradient(to bottom,
+            hsl(0, 100%, 40.98%) 0%,
+            hsl(0, 100%, 41.18%) 15.2%,
+            hsl(0, 100%, 41.37%) 27.2%,
+            hsl(0, 100%, 41.57%) 36.4%,
+            hsl(0, 100%, 41.96%) 43.3%,
+            hsl(0, 100%, 42.35%) 48.4%,
+            hsl(0, 100%, 42.75%) 52%,
+            hsl(0, 100%, 43.33%) 54.8%,
+            hsl(0, 100%, 43.92%) 57.1%,
+            hsl(0, 100%, 44.51%) 59.5%,
+            hsl(0, 100%, 45.29%) 62.3%,
+            hsl(0, 100%, 46.08%) 66.1%,
+            hsl(0, 100%, 47.06%) 71.3%,
+            hsl(0, 100%, 47.84%) 78.3%,
+            hsl(0, 100%, 48.82%) 87.8%,
+            hsl(0, 100%, 50%) 100%);
+
+
+            --purple-dark:
+  linear-gradient(
+    to bottom,
+    hsl(283.26, 54.43%, 30.98%) 0%,
+    hsl(282.99, 55.01%, 31.22%) 8.1%,
+    hsl(282.32, 56.59%, 31.86%) 15.5%,
+    hsl(281.46, 58.86%, 32.81%) 22.5%,
+    hsl(280.6, 61.56%, 33.96%) 29%,
+    hsl(279.85, 64.47%, 35.22%) 35.3%,
+    hsl(279.24, 67.43%, 36.51%) 41.2%,
+    hsl(278.78, 70.37%, 37.76%) 47.1%,
+    hsl(278.45, 73.22%, 38.94%) 52.9%,
+    hsl(278.23, 75.95%, 40%) 58.8%,
+    hsl(278.1, 78.51%, 40.91%) 64.7%,
+    hsl(278.04, 80.87%, 41.66%) 71%,
+    hsl(278.03, 82.97%, 42.24%) 77.5%,
+    hsl(278.05, 84.69%, 42.63%) 84.5%,
+    hsl(278.08, 85.87%, 42.87%) 91.9%,
+    hsl(278.1, 86.3%, 42.94%) 100%
+  );
+
+--marrom:
+  linear-gradient(
+    to bottom,
+    hsl(0, 40.23%, 17.06%) 0%,
+    hsl(0, 40.97%, 17.15%) 8.1%,
+    hsl(0, 43.02%, 17.39%) 15.5%,
+    hsl(0, 46.07%, 17.77%) 22.5%,
+    hsl(0, 49.82%, 18.26%) 29%,
+    hsl(0, 53.97%, 18.84%) 35.3%,
+    hsl(0, 58.28%, 19.47%) 41.2%,
+    hsl(0, 62.53%, 20.15%) 47.1%,
+    hsl(0, 66.59%, 20.83%) 52.9%,
+    hsl(0, 70.31%, 21.51%) 58.8%,
+    hsl(0, 73.63%, 22.14%) 64.7%,
+    hsl(0, 76.47%, 22.72%) 71%,
+    hsl(0, 78.78%, 23.21%) 77.5%,
+    hsl(0, 80.5%, 23.59%) 84.5%,
+    hsl(0, 81.59%, 23.83%) 91.9%,
+    hsl(0, 81.97%, 23.92%) 100%
+  );
+
+  --orange:
+  linear-gradient(
+    to bottom,
+    hsl(0, 64.9%, 51.96%) 0%,
+    hsl(0, 65.36%, 51.94%) 8.1%,
+    hsl(0, 66.67%, 51.87%) 15.5%,
+    hsl(0, 68.68%, 51.76%) 22.5%,
+    hsl(0, 71.26%, 51.62%) 29%,
+    hsl(0, 74.27%, 51.45%) 35.3%,
+    hsl(0, 77.58%, 51.27%) 41.2%,
+    hsl(0, 81.04%, 51.08%) 47.1%,
+    hsl(0, 84.55%, 50.88%) 52.9%,
+    hsl(0, 87.96%, 50.69%) 58.8%,
+    hsl(0, 91.17%, 50.51%) 64.7%,
+    hsl(0, 94.04%, 50.34%) 71%,
+    hsl(0, 96.48%, 50.2%) 77.5%,
+    hsl(0, 98.36%, 50.1%) 84.5%,
+    hsl(0, 99.57%, 50.02%) 91.9%,
+    hsl(0, 100%, 50%) 100%
+  );
+
 
 
 }
@@ -149,17 +250,50 @@
 
 .Events-Main-Div {
     width: 100%;
-    height: 100vh;
+    min-height: 100vh;
     background-color: white;
     padding: 20px;
+
+    .active {
+        display: block;
+
+    }
+
+    .diasble {
+        display: none;
+    }
+    .red{
+        background: var(--red);
+    }
+    .green{
+        background: var(--green);
+    }
+    .blue{
+        background: var(--blue);
+    }
+    .pink-blue{
+        background: var(--pink-blue);
+    }
+    .purple-dark{
+    background: var(--purple-dark);
+    }
+    .blue-dark{
+        background: var(--blue-dark);
+    }
+    .maroon{
+        background: var(--marrom);
+    }
+    .orange{
+        background: var(--orange);
+    }
 
     .Events-section {
         .Event-card {
             width: 80%;
             height: 25vh;
             position: relative;
-            background: var(--green);
             box-shadow: 1px 5px 2px 2px rgba(0, 0, 0, 0.556);
+            margin: 40px auto;
 
             .Event-date {
                 position: absolute;
@@ -184,6 +318,9 @@
 
 
                 }
+                h5{
+                    display: none;
+                }
             }
 
 
@@ -204,11 +341,13 @@
                     position: absolute;
                     top: 0;
                     right: 100px;
-                    h4{
+
+                    h4 {
                         color: black;
                         margin-top: 10px;
                     }
-                    .content-below{
+
+                    .content-below {
                         display: flex;
                         align-items: center;
                         font-size: 20px;
@@ -216,35 +355,44 @@
                         margin-bottom: 20px;
                         margin-left: 20px;
                         justify-content: space-around;
-                    
-                        p{
+                        color: rgb(4, 114, 193);
+
+                        p {
                             display: inline;
+                            color: rgb(4, 114, 193);
                         }
                     }
                 }
 
                 .box-button {
                     display: flex;
-                    flex-direction:column ;
+                    flex-direction: column;
                     width: 100px;
                     height: 100%;
                     position: absolute;
                     right: 0;
                     top: 0;
-                    .btn-1,.btn-2{
-                        height: 50%;
+
+                    .btn-1,
+                    .btn-2 {
+                        height: 100%;
                         font-size: 20px;
                         font-weight: 600;
-                        border:0;
+                        border: 0;
                         color: white;
                     }
-                    .btn-1{
-                        background: var(--btn-1);
+
+                    .btn-1 {
+                     
                         text-decoration: none;
                         text-align: center;
-                        padding-top: 20px;
+                        padding-top: 60px;
+                        &:hover{
+                            background:rgb(3, 134, 241);
+                        }
                     }
-                    .btn-2{
+
+                    .btn-2 {
                         background: var(--btn-2);
                     }
                 }
@@ -256,6 +404,154 @@
 }
 
 
+@media only screen and (max-width:500px) {
+
+    .Events-Main-Div {
+        padding: 5px;
+
+        .active {
+            display: block;
+
+        }
+
+        .diasble {
+            display: none;
+        }
+
+        .Events-section {
+            .Event-card {
+                width: 100%;
+                height: 200px;
+                position: relative;
+                
+                box-shadow: 1px 5px 2px 2px rgba(0, 0, 0, 0.556);
+                margin: 30px 0;
+
+                .Event-date {
+                    position: absolute;
+                    width: 60%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    top: 0;
+                    width: 100%;
+                    line-height: 0;
+                    padding: 0;
+
+                    span {
+                        font-size: 18px;
+                        font-weight: 500;
+                        margin-right: 5px;
+                        margin: 0 5 0 0;
+                        text-transform: uppercase;
+                    }
+
+                    h1 {
+                        font-size: 18px;
+                        margin: 0;
+                        margin-right: 5px;
+
+
+                    }
+
+                    h5 {
+                        display: inline;
+                        margin-bottom: 0;
+                        margin-right: 5px;
+                    }
+
+                }
+
+
+                .box {
+                    display: block;
+                    display: flex;
+                    flex-direction: column;
+                    width: 100%;
+                    height: 140px;
+                    top: 30px;
+                    right: 0;
+                    background: var(--white);
+                    border: 0;
+                    position: absolute;
+                    clip-path: none;
+                    
+
+                    .box-content {
+                        display: flex;
+                        flex-direction: column;
+                        width: 100%;
+                        position: absolute;
+                        top: 0;
+                        right: 0;
+                        left: 0;
+                        padding:5px;
+
+                        h4 {
+                            color: black;
+                            margin-top: 0;
+                            font-size: 14px;
+                            min-height: 50%;
+                            font-weight: 600;
+                            border-bottom: 2px solid rgba(107, 107, 107, 0.206);
+                
+                        }
+
+                        .content-below {
+                            display: flex;
+                            align-items: start;
+                            flex-direction: column;
+                            font-size: 14px;
+                            height: 60px;
+                            margin: 0;
+                            padding: 0 0;
+                            justify-content: none;
+                            color: rgb(4, 114, 193);
+
+                            p {
+                                display: inline;
+                                color: rgb(4, 114, 193);
+                            }
+                        }
+                    }
+
+                    .box-button {
+                        display: flex;
+                        flex-direction: none;
+                        width: 100%;
+                        height: 30px;
+                        position: absolute;
+                        right: 0;
+                        left: 0;
+                        bottom: 0;
+                        top: 140px;
+
+                        .btn-1,
+                        .btn-2 {
+                            height: 30px;
+                            font-size: 20px;
+                            font-weight: 600;
+                            border: 0;
+                            color: white;
+                        }
+
+                        .btn-1 {
+                         
+                            text-decoration: none;
+                            text-align: center;
+                            padding-top: 0px;
+                        }
+
+                        .btn-2 {
+                            background: var(--btn-2);
+                        }
+                    }
+                }
+            }
+
+        }
+    }
+}
 
 
 

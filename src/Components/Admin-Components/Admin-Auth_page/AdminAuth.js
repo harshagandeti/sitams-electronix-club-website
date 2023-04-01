@@ -3,7 +3,6 @@ import "./AdminAuth.scss";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { useNavigate } from "react-router-dom";
-import { useAuth } from "../../../index";
 import { Password } from 'primereact/password';
 import "primeicons/primeicons.css";
 import "primereact/resources/primereact.min.css";
@@ -16,7 +15,7 @@ const AdminAuth = (props) => {
 
   // for table (project-page) delete funnction
 
-  const [isAuth,setIsAuth]=useState(true)
+  const [isAuth,setIsAuth]=useState(false)
 
   const data = {
     username: "Admin@sitams",
@@ -31,6 +30,7 @@ const AdminAuth = (props) => {
 
     Validation();
     LoginProcess();
+    props.sendProps(isAuth)
 
     setUsername("");
     setPassword("");
@@ -44,14 +44,14 @@ const AdminAuth = (props) => {
           position:toast.POSITION.TOP_CENTER,
           theme:"colored"
         })
-        setIsAuth(false)
+        setIsAuth(true)
 
         sessionStorage.setItem("username",username)
         sessionStorage.setItem("password",password)
         usenavigate("/admin-dash-board");
 
       } else {
-        setIsAuth(true)
+        setIsAuth(false)
         toast.error("Please enter valid username or Password", {
           position: toast.POSITION.TOP_CENTER,
           theme:"colored"

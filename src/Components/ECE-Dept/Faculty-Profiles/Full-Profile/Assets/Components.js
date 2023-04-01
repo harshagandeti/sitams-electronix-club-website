@@ -15,7 +15,7 @@ export const About = (name, designation, doj, dept, id) => {
           </tr>
           <tr>
             <td className="td-th">Name</td>
-            <td className="td-tb">Dr.E.NThompson Necluie</td>
+            <td className="td-tb">Dr.K.Gopi</td>
           </tr>
           <tr>
             <td className="td-th">Designation</td>{" "}

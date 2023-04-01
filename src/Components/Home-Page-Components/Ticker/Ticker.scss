@@ -1,0 +1,201 @@
+:root {
+
+    /* Body Backaground colour*/
+
+    --main-background-colour: white;
+    /* dark shades of primary color*/
+    --clr-primary-1: hsl(21, 91%, 17%);
+    --clr-primary-2: hsl(21, 84%, 25%);
+    --clr-primary-3: hsl(21, 81%, 29%);
+    --clr-primary-4: hsl(21, 77%, 34%);
+    --clr-primary-5: hsl(21, 62%, 45%);
+    --clr-primary-6: hsl(21, 57%, 50%);
+    --clr-primary-7: hsl(21, 65%, 59%);
+    --clr-primary-8: hsl(21, 80%, 74%);
+    --clr-primary-9: hsl(21, 94%, 87%);
+    --clr-primary-10: hsl(21, 100%, 94%);
+    /* darkest grey - used for headings */
+    --clr-grey-1: hsl(209, 61%, 16%);
+    --clr-grey-2: hsl(211, 39%, 23%);
+    --clr-grey-3: hsl(209, 34%, 30%);
+    --clr-grey-4: hsl(209, 28%, 39%);
+    /* grey used for paragraphs */
+    --clr-grey-5: hsl(210, 22%, 49%);
+    --clr-grey-6: hsl(209, 23%, 60%);
+    --clr-grey-7: hsl(211, 27%, 70%);
+    --clr-grey-8: hsl(210, 31%, 80%);
+    --clr-grey-9: hsl(212, 33%, 89%);
+    --clr-grey-10: hsl(210, 36%, 96%);
+    --clr-white: #fff;
+    --clr-red-dark: hsl(360, 67%, 44%);
+    --clr-red-light: hsl(360, 71%, 66%);
+    --clr-green-dark: hsl(125, 67%, 44%);
+    --clr-green-light: hsl(125, 71%, 66%);
+    --clr-black: #222;
+
+    --transition: all 0.3s ease-in-out;
+
+    --spacing: 0.1rem;
+    --radius: 0.25rem;
+    --light-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    --dark-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    --max-width: 1170px;
+    --fixed-width: 620px;
+}
+
+/*
+  
+  Global Styles
+  */
+
+*,
+::after,
+::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/*  global classes */
+
+/* section */
+.ticker {
+    width: 100%;
+    margin: 0 auto;
+    background-color: var(--main-background-colour);
+    display: flex;
+    list-style-type: none;
+    background-color: #fff;
+    height: 18vh;
+    border-bottom: 1px solid rgb(62, 62, 62);
+
+
+
+
+    /*
+  =============== 
+  Slider
+  ===============
+  */
+
+    .left-ticker {
+        width: 20%;
+        font-weight: 600;
+        font-size: 2rem;
+        text-align: center;
+        border-right: 1px dotted black;
+    }
+
+    .sectionCenter-ticker {
+        margin: 0 auto;
+        width: 100%;
+        height: 100%;
+        text-align: center;
+        position: relative;
+        display: flex;
+        overflow: hidden;
+  
+    }
+
+
+
+    .prev-Btnn,
+    .next-Btnn {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background: transparent;
+        color: rgb(55, 55, 55);
+        display: grid;
+        place-items: center;
+        border-color: transparent;
+        font-size: 2rem;
+        font-weight: 800;
+        cursor: pointer;
+        transition: var(--transition);
+    }
+
+    .prev:hover,
+    .next:hover {
+        background: var(--clr-primary-5);
+    }
+
+    .prev-Btnn {
+        left: 20px;
+    }
+
+    .next-Btnn {
+        right: 20px;
+    }
+
+    @media (min-width: 800px) {
+        .text {
+            max-width: 45em;
+        }
+
+        .prev,
+        .next {
+            width: 2rem;
+            height: 2rem;
+            font-size: 1.5rem;
+        }
+    }
+
+    article {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0;
+        transition: var(--transition);
+    }
+
+    article.activeSlide {
+        opacity: 1;
+        transform: translateY(0);cursor: pointer;
+    }
+
+    article.lastSlide {
+        transform: translateY(-100%);
+    }
+
+    article.nextSlide {
+        transform: translateY(100%);
+    }
+
+    article .top-right-ticker {
+        height: 30%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 20px;
+        font-weight: 600;
+
+    }
+
+    article .bottom-right-ticker {
+        height: 40%;
+        font-weight: 600;
+        font-size: 1.4rem;
+        color: var(--clr-primary-5);
+
+    }
+    article button{
+        border: transparent;
+        background-color: transparent;
+        color: black;
+        width: 100%;
+        height: 30%;
+        font-weight: 600;
+    }
+    article:hover button{
+        border: transparent;
+        background-color: transparent;
+        color: rgb(19, 206, 19);
+        width: 100%;
+        height: 30%;
+    }
+
+}

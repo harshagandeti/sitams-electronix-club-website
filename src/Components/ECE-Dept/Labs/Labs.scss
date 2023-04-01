@@ -1,0 +1,124 @@
+.Labs-Main-Div {
+    width: 100%;
+    height: fit-content;
+    background-color: white;
+    margin: 0;
+
+    .disable{
+        display: none;  
+    }
+
+    h2 {
+        color: rgb(3, 96, 138);
+        margin: 40px;
+        border-bottom: 2px solid rgb(6, 99, 157);
+    }
+
+    .labs-list-container {
+        margin-left: 20px;
+
+        ul {
+            font-size: 20px;
+            font-weight: 600;
+            list-style-type: none;
+            ;
+
+            li {
+                button {
+                    background-color: white;
+                    border: none;
+                    color: rgb(9, 94, 179);
+                    margin: 10px;
+                    &:hover{
+                        color:orangered;
+                    }
+                }
+                
+    .active{
+        width: 95%;
+        margin: 30px auto;
+        height: fit-content;
+        display: block;
+        position: relative;
+        button{
+            position: fixed;
+            bottom: 60px;
+            right: 40px;
+            background-color: rgb(0, 110, 255);
+            color: white;
+            border: 1px solid transparent;
+            width: 180px;
+            height: 40px;
+            border-radius: 999px;
+            z-index: 100;
+            &:hover{
+                box-shadow: 0px 0px 4px 4px rgb(0, 229, 255);
+            }
+        }
+    }
+            }
+        }
+    }
+
+}
+
+@media only screen and (max-width:500px) {
+    .Labs-Main-Div {
+        width: 100%;
+    
+        .disable{
+            display: none;  
+        }
+    
+        h2 {
+            color: rgb(3, 96, 138);
+            margin: 10px;
+            border-bottom: 2px solid rgb(6, 99, 157);
+            font-size: 20px;
+        }
+    
+        .labs-list-container {
+            margin-left:5px;
+    
+            ul {
+                font-size: 12px;
+                font-weight: 500;
+                padding-left: 5px;
+    
+                li {
+                    margin: 0;
+
+                    height: fit-content;
+                    button {
+                        background-color: white;
+                        border: none;
+                        color: rgb(9, 94, 179);
+                        margin: 5px;
+                        &:hover{
+                            color:orangered;
+                        }
+                    }
+                    
+        .active{
+            width: 95%;
+            margin: 30px auto;
+            height: fit-content;
+            display: block;
+            position: relative;
+            button{
+                position: fixed;
+                font-size: 16px;
+                bottom: 60px;
+                right: 10px;
+                border: 1px solid transparent;
+                width: 100px;
+                height: 30px;
+            }
+        }
+                }
+            }
+        }
+    
+    }
+    
+}
