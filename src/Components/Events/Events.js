@@ -52,7 +52,7 @@ const [eventsData,setEventsData]=useState(data)
             </div>
             <div className="box-button">
               <a
-                href="https://www.linkedin.com/in/harsha-gandeti/"
+                href={event.register_link}
                 target="_balnk"
                 className={"btn-1  "+(event.cardColor ==="red" ? "red":event.cardColor==="blue"? "blue":event.cardColor==="green" ? "green":event.cardColor==="purple-dark"?"purple-dark":event.cardColor==="pink-blue"?"pink-blue":event.cardColor==="blue-dark"? "blue-dark":event.cardColor==="maroon"? "maroon":event.cardColor==="orange"? "orange":"")}
               >
