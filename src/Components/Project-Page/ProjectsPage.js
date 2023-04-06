@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 // import { useTable } from "react-table";
 import { FaSearch } from "react-icons/fa";
 import { DataTable } from "primereact/datatable";
@@ -10,11 +10,30 @@ import "primeicons/primeicons.css";
 import "primereact/resources/primereact.min.css";
 import "primereact/resources/themes/lara-light-indigo/theme.css";
 
-// import "bootstrap/dist/css/bootstrap.min.css";
+// firebase config &libraries
+import { db } from "../Api/Config";
+import { collection, getDocs } from "firebase/firestore";
 
 const ProjectsPage = (props) => {
   const [isAuth, setIsAuth] = useState(false);
+  const [project, setProject] = useState();
 
+  useEffect(() => {
+    const getEvents = async () => {
+      try {
+        const eventSnapshot = await getDocs(collection(db, "NewProject"));
+        const filterData = eventSnapshot.docs.map((doc) => ({
+          ...doc.data(),
+          id: doc.id,
+        }));
+        setProject(filterData);
+        console.log("projects", project);
+      } catch (e) {
+        console.error("Error adding document: ", e);
+      }
+    };
+    getEvents();
+  });
 
   const data = [
     {
@@ -130,31 +149,25 @@ const ProjectsPage = (props) => {
 
       <div className="Table">
         <div className="card">
-          
-            <DataTable
-              value={data}
-              showGridlines
-              stripedRows
-              paginator
-              rows={10}
-              rowsPerPageOptions={[5, 10, 25, 50]}
-              tableStyle={{ minWidth: "50rem" }}
-            >
-              <Column field="title" header="Title of the project"></Column>
-              <Column field="passedOutYear" header="Passed out year"></Column>
-              <Column field="typeOfProject" header="Type of project"></Column>
-              <Column
-                field="Document"
-                body={downloadIcon}
-                header="Document"
-              ></Column>
-              <Column
-                hidden={isAuth}
-                body={deleteIcon}
-                header="Delete"
-              ></Column>
-            </DataTable>
-        
+          <DataTable
+            value={data}
+            showGridlines
+            stripedRows
+            paginator
+            rows={10}
+            rowsPerPageOptions={[5, 10, 25, 50]}
+            tableStyle={{ minWidth: "50rem" }}
+          >
+            <Column field="title" header="Title of the project"></Column>
+            <Column field="passedOutYear" header="Passed out year"></Column>
+            <Column field="typeOfProject" header="Type of project"></Column>
+            <Column
+              field="Document"
+              body={downloadIcon}
+              header="Document"
+            ></Column>
+            <Column hidden={isAuth} body={deleteIcon} header="Delete"></Column>
+          </DataTable>
         </div>
       </div>
       <div className="mobile">

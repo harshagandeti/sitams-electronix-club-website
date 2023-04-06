@@ -9,9 +9,11 @@ import Profile from "../../Images/Profile-1.png";
 import { InputTextarea } from "primereact/inputtextarea";
 import { Dialog } from "primereact/dialog";
 import { Button } from "primereact/button";
-import Avatar from "react-avatar-editor";
-
 import "primereact/resources/primereact.min.css";
+
+//firebase config & libraries
+import { db } from "../../Api/Config";
+import { collection, addDoc } from "firebase/firestore";
 
 const AboutUs_Update = () => {
   const [description, setDescription] = useState("");
@@ -38,37 +40,56 @@ const AboutUs_Update = () => {
     </div>
   );
 
-  const submitHandler = (e) => {
+  const submitHandler = async (e) => {
     e.prventDefault();
+    if (profileImage === null) {
+      setVisible(true);
+      return
+    }
+    try {
+      const docRef = await addDoc(collection(db, "AboutFaculty"), {
+        description,
+        name,
+        roleText,
+      });
+      console.log("Document written with ID: ", docRef.id);
+    } catch (e) {
+      console.error("Error adding document: ", e);
+    }
+    console.log(name,roleText,description)
 
-    console.log(profileImage.files[0]);
+    cancelHandler();
   };
-  // avatar
-
+  const cancelHandler = () => {
+    setDescription("");
+    setName("");
+    setName("");
+    setRoleText("");
+  };
   return (
     <div className="Abt-Main-Div">
       <SectionHeading heading="Update-About us" />
 
       <div className="Abt-Containers">
         <div className="Container">
-          <div className="header">
-            <div className="profile-img">
-              <img
-                src={Profile}
-                onClick={() => {
-                  setVisible(true);
-                }}
-              ></img>
-            </div>
-            <Dialog
-              id="dailog"
-              style={{ width: "25vw" }}
-              visible={visible}
-              footer={footerContent}
-              header={() => <p>Choose Profile Pic</p>}
-              onHide={() => setVisible(false)}
-            >
-              <form onSubmit={submitHandler}>
+          <form onSubmit={submitHandler}>
+            <section className="header">
+              <section className="profile-img">
+                <img
+                  src={Profile}
+                  onClick={() => {
+                    setVisible(true);
+                  }}
+                ></img>
+              </section>
+              <Dialog
+                id="dailog"
+                style={{ width: "25vw" }}
+                visible={visible}
+                footer={footerContent}
+                header={() => <p>Choose Profile Pic</p>}
+                onHide={() => setVisible(false)}
+              >
                 <input
                   id="input-file"
                   type="file"
@@ -77,43 +98,43 @@ const AboutUs_Update = () => {
                     setProfileImage(e.target.files[0]);
                   }}
                 ></input>
-              </form>
-            </Dialog>
-            <div className="profile-details">
-              <div className="Name p-inputgroup">
-                <span className="p-inputgroup-addon">Name</span>
-                <input
-                  className="input-Text"
-                  type="text"
-                  value={name}
-                  onChange={(e) => setName(e.target.value)}
-                  placeholder="Dr. E.N. Thompson Forum"
-                />
-              </div>
-              <div className="Name p-inputgroup">
-                <span className="p-inputgroup-addon">Role</span>
-                <input
-                  className="input-Text"
-                  type="text"
-                  value={roleText}
-                  onChange={(e) => setRoleText(e.target.value)}
-                  placeholder="Principal , Sitams"
-                />
-              </div>
-            </div>
-          </div>
-          <div className="content">
-            <InputTextarea
-              id="inputArea"
-              autoResize
-              placeholder="Description..."
-              value={description}
-              onChange={(e) => setDescription(e.target.value)}
-              rows={8}
-              cols={65}
-            />
-            <button>Update </button>
-          </div>
+              </Dialog>
+              <section className="profile-details">
+                <section className="Name p-inputgroup">
+                  <label className="p-inputgroup-addon">Name</label>
+                  <input
+                    className="input-Text"
+                    type="text"
+                    value={name}
+                    onChange={(e) => setName(e.target.value)}
+                    placeholder="Dr. E.N. Thompson Forum"
+                  />
+                </section>
+                <section className="Name p-inputgroup">
+                  <label className="p-inputgroup-addon">Role</label>
+                  <input
+                    className="input-Text"
+                    type="text"
+                    value={roleText}
+                    onChange={(e) => setRoleText(e.target.value)}
+                    placeholder="Principal , Sitams"
+                  />
+                </section>
+              </section>
+            </section>
+            <section className="content">
+              <InputTextarea
+                id="inputArea"
+                autoResize
+                placeholder="Description..."
+                value={description}
+                onChange={(e) => setDescription(e.target.value)}
+                rows={8}
+                cols={65}
+              />
+              <button onSubmit={submitHandler}>Update </button>
+            </section>
+          </form>
         </div>
       </div>
       <div className="line">

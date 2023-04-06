@@ -4,6 +4,7 @@ import { Line , Circle } from '../Home-Page-Components/Back-Ground-Objects/BackG
 import SectionHeading from '../Section-Heading/SectionHeading'
 import Profile from "../Images/Profile-1.png"
 import {FiEdit} from "react-icons/fi"
+import StudentSection from "../StudentMembers/StudentSection"
 
 const AboutUs = () => {
     const [isAuth,setIsAuth]=useState(false)
@@ -91,7 +92,7 @@ In addition to his expertise, Dr. Gopi is also a student-encouraging professor. 
     </div>
 
     <div className='Board'>
-        <SectionHeading heading="Board Members" center/>
+        <StudentSection/>
     </div>
     <div className='line'><Line/></div>
     <div className='Circle'><Circle/></div>

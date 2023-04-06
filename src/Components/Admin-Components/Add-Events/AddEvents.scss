@@ -20,7 +20,24 @@
                 outline-color:cyan ;
                 padding:10px 15px;
                 font-size: 18px;
+                border-radius: 0;
+                border: 1px solid black;
             
+            }
+            select{
+                height: 40px;
+                width: 50%;
+                border-radius: 0;
+                outline-color:cyan ;
+                slot{
+                    border: 0;
+                    border-radius: 0; 
+                }
+                option{
+                    border: 0;
+                    border-radius: 0;
+                }
+
             }
             .section{
                 display: flex;

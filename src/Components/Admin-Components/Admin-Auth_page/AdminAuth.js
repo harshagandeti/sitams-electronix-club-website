@@ -10,8 +10,8 @@ import "primereact/resources/themes/lara-light-indigo/theme.css";
 
 const AdminAuth = (props) => {
   const usenavigate = useNavigate();
-  const [username, setUsername] = useState("");
-  const [password, setPassword] = useState("");
+  const [username, setUsername] = useState("Admin@sitams");
+  const [password, setPassword] = useState("Admin@sitams");
 
   // for table (project-page) delete funnction
 
@@ -103,7 +103,6 @@ const AdminAuth = (props) => {
               placeholder="Password"
               name="password"
               autoComplete="current-password"
-              toggleMask
               value={password}
               onChange={(e) => {
                 setPassword(e.target.value);

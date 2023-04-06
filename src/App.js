@@ -2,7 +2,7 @@ import "./App.scss";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import {toast,ToastContainer} from "react-toastify"
 import Header from "./Components/Header/Header";
-import NavBar from "./Components/Home-Page-Components/Nav-Bar/NavBar";
+import NavBar from "./Components/Nav-Bar/NavBar";
 import Home from "./Components/Home/Home";
 import Gallery from "./Components/Gallery/Gallery"
 import ProjectsPage from "./Components/Project-Page/ProjectsPage"
@@ -33,8 +33,7 @@ function App() {
   const [events,setEvents]=useState([])
   // console.log("APP:",events)
 
-  console.log("login:- ",login)
-  console.log("logout:- ",logout)
+
   return (
     <div className="App">
       <div className="landingBackGround">
