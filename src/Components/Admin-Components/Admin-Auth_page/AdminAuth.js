@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import "./AdminAuth.scss";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -8,13 +8,19 @@ import "primeicons/primeicons.css";
 import "primereact/resources/primereact.min.css";
 import "primereact/resources/themes/lara-light-indigo/theme.css";
 
+import {auth } from '../../../Config';
+import { signInWithEmailAndPassword } from "firebase/auth";
+import { AuthContext } from "../../Context/AuthContext";
+import AdminAbout from "../Admin-About/AdminAbout";
+import { AdminCheckContext } from "../../Context/AdminCheckContext";
 const AdminAuth = (props) => {
   const usenavigate = useNavigate();
-  const [username, setUsername] = useState("Admin@sitams");
-  const [password, setPassword] = useState("Admin@sitams");
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
+  const {dispatch}=useContext(AuthContext)
+  const {dispatcher}=useContext(AdminCheckContext)
 
   // for table (project-page) delete funnction
-
   const [isAuth,setIsAuth]=useState(false)
 
   const data = {
@@ -30,7 +36,7 @@ const AdminAuth = (props) => {
 
     Validation();
     LoginProcess();
-    props.sendProps(isAuth)
+
 
     setUsername("");
     setPassword("");
@@ -38,28 +44,32 @@ const AdminAuth = (props) => {
 
   const LoginProcess = () => {
     if (username.length !== 0 && password.length !== 0) {
-      //user name verification
-      if (data.username === username && data.password === password) {
+      const authCheck= signInWithEmailAndPassword(auth,username,password) .then((userCredential) => {
+        // Signed in 
+        const user = userCredential.user;
+        console.log(user)
+        dispatch({type:"LOGIN",payload:user})
+        dispatcher({type:"LOGIN",payload:true})
         toast.success("Login Successfully",{
           position:toast.POSITION.TOP_CENTER,
           theme:"colored"
         })
         setIsAuth(true)
-
-        sessionStorage.setItem("username",username)
-        sessionStorage.setItem("password",password)
+        sessionStorage.setItem("username", username);
+        sessionStorage.setItem("password", password);
         usenavigate("/admin-dash-board");
-
-      } else {
+      })
+      .catch((error) => {
+        const errorCode = error.code;
+        const errorMessage = error.message;
         setIsAuth(false)
         toast.error("Please enter valid username or Password", {
           position: toast.POSITION.TOP_CENTER,
           theme:"colored"
          
         });
-      }
+      });
 
-  
     }
   };
   const Validation = () => {

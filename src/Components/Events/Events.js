@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import SectionHeading from "../Section-Heading/SectionHeading";
 import "./Events.scss";
 import { MdPlace } from "react-icons/md";
@@ -6,63 +6,68 @@ import { IoMdTimer } from "react-icons/io";
 import { BsDoorOpen } from "react-icons/bs";
 import { MdDeleteForever } from "react-icons/md";
 
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
 // firebase config &libraries
-import { db } from "../Api/Config";
-import { collection, getDocs, deleteDoc, doc,} from "firebase/firestore";
+import { db } from "../../Config";
+import {
+  collection,
+  getDocs,
+  deleteDoc,
+  onSnapshot,
+  doc,
+} from "firebase/firestore";
+import { AdminCheckContext } from "../Context/AdminCheckContext";
+
 
 const Events = (props) => {
-  const [show, setShow] = useState(true);
+  // const [show, setShow] = useState(true);
   const [eventsData, setEventsData] = useState();
   const [cardColor, setColor] = useState("");
-  const [index, setindex] = useState("");
+  const [index, setindex] = useState(0);
+const {AdminCheck}=useContext(AdminCheckContext)
+
+
   useEffect(() => {
-    const getEvents = async () => {
-      try {
-        const eventSnapshot = await getDocs(collection(db, "NewEvents"));
-        const filterData = eventSnapshot.docs.map((doc) => ({
+    const eventSnapshots = onSnapshot(
+      collection(db, "NewEvents"),
+      (Snapshots) => {
+        const filterData = Snapshots.docs.map((doc) => ({
           ...doc.data(),
           id: doc.id,
         }));
-          setindex(filterData.length)
         setEventsData(filterData);
+        console.log("filterdata:", filterData);
+        console.log("Events", eventsData);
+      },
+      (error) => console.log(error)
+    );
 
-      } catch (e) {
-        console.error("Error adding document: ", e);
-      }
-    };
-    getRandomColor();
-    getEvents();
+    return () => eventSnapshots();
   }, []);
-  const getRandomColor = () => {
-    const arr = [
-      "red",
-      "blue",
-      "green",
-      "orange",
-      "purple-dark",
-      "maroon",
-      "blue-dark",
-    ];
-    const randomIndex = Math.floor(Math.random() * arr.length);
 
-    const item = arr[randomIndex];
-    setColor(item);
-    return item;
-  };
-  const deleteHandler = (ID) => {
 
-    const eventDoc = doc(db, "NewEvents",ID);
-   
+  const deleteHandler = async(ID) => {
+    console.log(ID)
+    const {id}=ID
+    const eventDeleteDoc = doc(db, "NewEvents", id);
+    await deleteDoc(eventDeleteDoc);
+    toast.warning("Event Details deleted successfully",{
+      position:toast.POSITION.TOP_CENTER,
+      theme:"colored"
+    })
   };
 
   return (
     <div className="Events-Main-Div">
       <SectionHeading heading="Upcoming-Events" />
       <div className="Events-section">
-        {index>0 ? (
-          eventsData.map((eventEach,) => {
-            console.log("event-data",eventsData.length)
-            const { event,id } = eventEach;
+        {eventsData  != null ? (
+          eventsData &&
+          eventsData.map((eventEach) => {
+            console.log("event-data", eventsData.length);
+            const { event, id } = eventEach;
             return (
               <div
                 key={id}
@@ -135,15 +140,15 @@ const Events = (props) => {
                       Register Now
                     </a>
                   </div>
-                 
+
                   <button
-                      onClick={()=>{
-                       deleteHandler()
-                      }}
-                      className={show ? "active" : "disable"}
-                    >
-                      <MdDeleteForever />
-                    </button>
+                    onClick={() => {
+                      deleteHandler({ id });
+                    }}
+                    className={AdminCheck ? "active" : "disable"}
+                  >
+                    <MdDeleteForever />
+                  </button>
                 </div>
               </div>
             );

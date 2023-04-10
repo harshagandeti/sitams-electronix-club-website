@@ -6,7 +6,7 @@ import { Api } from "../../Api/Api";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 //firebase config & libraries
-import { db } from "../../Api/Config";
+import { db } from "../../../Config";
 import { collection, addDoc } from "firebase/firestore";
 
 const AddEvents = (props) => {

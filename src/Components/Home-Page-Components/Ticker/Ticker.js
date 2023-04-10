@@ -8,7 +8,7 @@ import {MdOutlineDateRange} from "react-icons/md"
 import data from "../../Events/data";
 import "./Ticker.scss";
 
-function Testmonials() {
+function Testmonials(events) {
   const [people, setPeople] = useState(data);
   const [index, setIndex] = useState(0);
 

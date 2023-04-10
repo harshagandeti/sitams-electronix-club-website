@@ -1,0 +1,254 @@
+.Social-Main {
+    .profile {
+        width: 180px;
+        height: 50px;
+        position: absolute;
+        transform: translate(-50%, -50%);
+        border-radius: 5px;
+        background-color: #fafafa;
+   
+        animation: show-profile 0.5s forwards ease-in-out;
+      ;
+    }
+
+    @keyframes show-profile {
+        0% {
+            width: 0;
+        }
+    }
+
+    .profile .photo,
+    .profile .content {
+        box-sizing: border-box;
+     
+    }
+
+    .profile .photo {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        overflow: hidden;
+        margin-left: -26px;
+        border: 5px solid #fafafa;
+        background-color: rgba(0, 0, 0, 0.943);
+        z-index: 15;
+        padding: 6px 2px 0 2px;
+      text-align: center;
+        animation: rotate-photo 0.5s forwards ease-in-out;
+    }
+
+    @keyframes rotate-photo {
+        100% {
+            transform: rotate(-360deg);
+        }
+    }
+
+    .profile .photo img {
+        width: 90%;
+        height: 90%;
+        cursor: pointer;
+    }
+
+    .profile .content {
+        padding: 2px;
+        overflow: hidden;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+    
+        color: white;
+    }
+
+    .profile .content::before {
+        content: "";
+        position: absolute;
+        width: 230px;
+        height: 150px;
+        background-color: rgb(0, 157, 255);
+        left: 0;
+        top: -20px;
+        z-index: -1;
+        transform: rotate(-8deg);
+    }
+
+    .profile .content .text {
+        margin-top: 5px;
+        cursor: pointer;
+        margin-left: 30px;
+    }
+
+    .profile .content .text .h5,
+    .profile .content .text .h6 {
+        font-weight: normal;
+        margin: 1px 0;z-index: inherit;
+        color: white;
+    }
+
+    .profile .content .btn {
+        background-color: rgb(38, 187, 31);
+        width: 40px;
+        height: 40px;
+        position: absolute;
+        right: 10px;
+        top: 5px;
+        border-radius: 50%;
+        z-index: 1;
+        cursor: pointer;
+        transition-duration: 0.3s;
+        animation: pop-btn 0.3s both ease-in-out 0.5s;
+    }
+
+    @keyframes pop-btn {
+        0% {
+            transform: scale(0);
+        }
+
+        80% {
+            transform: scale(1.2);
+        }
+
+        100% {
+            transform: scale(1);
+        }
+    }
+
+    .profile .content .btn:hover {
+        box-shadow: 0 0 0 5px rgba(2, 255, 40, 0.5);
+    }
+
+    .profile .content .btn span {
+        width: 50%;
+        height: 2px;
+        position: absolute;
+        background-color: rgb(255, 255, 255);
+        top: 50%;
+        left: 20%;
+        transform: translateY(-50%);
+        animation: to-hamburger 0.3s forwards ease-in-out;
+    }
+
+    .profile .content .btn span::before,
+    .profile .content .btn span::after {
+        content: "";
+        width: 100%;
+        height: 2px;
+        position: absolute;
+        background-color: white;
+        transition-duration: 0.3s;
+        transform: rotate(0deg);
+        right: 0;
+    }
+
+    .profile .content .btn span::before {
+        margin-top: -7px;
+    }
+
+    .profile .content .btn span::after {
+        margin-top: 7px;
+    }
+
+    .profile .content .btn.active span {
+        animation: to-arrow 0.3s forwards ease-in-out;
+    }
+
+    .profile .content .btn.active span::before,
+    .profile .content .btn.active span::after {
+        width: 60%;
+        right: -1px;
+    }
+
+    .profile .content .btn.active span::before {
+        transform: rotate(45deg);
+    }
+
+    .profile .content .btn.active span::after {
+        transform: rotate(-45deg);
+    }
+
+    @keyframes to-hamburger {
+        from {
+            transform: translateY(-50%) rotate(-180deg);
+        }
+    }
+
+    @keyframes to-arrow {
+        from {
+            transform: translateY(-50%) rotate(0deg);
+        }
+
+        to {
+            transform: translateY(-50%) rotate(180deg);
+        }
+    }
+
+    .profile .box {
+        width: 100px;
+        height: 100px;
+        opacity: 0;
+        border-radius: 50%;
+        background-color: rgba(255, 255, 255, 0.616);
+        position: absolute;
+        top: 50%;
+        left: 0%;
+        transform: translate(-50%, -50%);
+        transition-duration: 0.3s;
+        z-index: 1;
+    }
+
+    .profile .box a {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        font-size: 20px;
+        color: white;
+        text-align: center;
+        line-height: 35px;
+        position: absolute;
+        cursor: pointer;
+        left: 10px;
+        top: calc(75px - 40px/2);
+        transition-duration: 0.3s;
+    }
+
+    .profile .box a:hover {
+        transition-delay: initial !important;
+        box-shadow: 0 0 0 5px #babbbc;
+    }
+
+    .profile .box.open {
+        opacity: 1;
+    }
+
+    .profile .box.open a {
+        left: 40px;
+    }
+
+    //   .profile .box.open i:nth-of-type(1) {
+    //     transform: rotate(-90deg) translateX(120px) rotate(90deg);
+    //     transition-delay: 0s;
+    //   }
+    .profile .box.open a:nth-of-type(1) {
+        transform: rotate(45deg) translateX(-110px) rotate(-45deg);
+        transition-delay: 0.1s;
+        background-color: rgb(0, 81, 255);
+    }
+
+    .profile .box.open a:nth-of-type(2) {
+        transform: rotate(0deg) translateX(-110px) rotate(0deg);
+        transition-delay: 0.2s;
+        background-color: rgb(255, 0, 234);
+    }
+
+    .profile .box.open a:nth-of-type(3) {
+        transform: rotate(-45deg) translateX(-80px) rotate(45deg);
+        transition-delay: 0.3s;
+        background-color: rgb(0, 183, 255);
+    }
+
+    //   .profile .box.open i:nth-of-type(5) {
+    //     transform: rotate(90deg) translateX(120px) rotate(-90deg);
+    //     transition-delay: 0.4s;
+    //   }
+}

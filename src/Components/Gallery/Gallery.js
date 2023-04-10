@@ -1,64 +1,48 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
+
+import { db } from "../../Config";
+import { collection, deleteDoc, doc ,onSnapshot} from "firebase/firestore";
 
 import ImgSrc_1 from "./GalleryImg/environment-earth-day-hands-trees-growing-seedlings-bokeh-green-background-female-hand-holding-tree-nature-field-gra-130247647.jpg";
 import ImgSrc_2 from "./GalleryImg/photo-1541963463532-d68292c34b19.jpeg";
 import ImgSrc_3 from "./GalleryImg/Electronics Logo - Made with PosterMyWall.jpg";
 
-// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { FaBackward, FaForward, FaRegTimesCircle } from "react-icons/fa";
-// import { ImCross} from "react-icons/im";
+import { MdOutlineDeleteForever } from "react-icons/md";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 import "./Gallery.scss";
 import SectionHeading from "../Section-Heading/SectionHeading";
 
 const WSPGallery = () => {
-  const galleryImages = [
-    {
-      id: 1,
-      img: ImgSrc_1,
-      title:
-        "Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit",
-    },
-    {
-      _id: 2,
-      img: ImgSrc_3,
-      title:
-        "Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit",
-    },
-    {
-      _id: 3,
-      img: ImgSrc_2,
-      title:
-        "Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit",
-    },
-    {
-      _id: 4,
-      img: ImgSrc_1,
-      title:
-        "Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit",
-    },
-    {
-      _id: 5,
-      img: ImgSrc_1,
-      title:
-        "NTraijdfj jnfvlkdgl nvoeij;o je;oirjgegnkdnb nlrigoewi nelijgewiojg kjnglerweng kjnlntrit",
-    },
-    {
-      _id: 6,
-      img: ImgSrc_1,
-      title:
-        "Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit",
-    },
-  ];
-
   const [slideNumber, setSlideNumber] = useState(0);
   const [openModal, setOpenModal] = useState(false);
+  const [data, setData] = useState();
+
 
   const handleOpenModal = (index) => {
     setSlideNumber(index);
     setOpenModal(true);
   };
+  useEffect(() => {
 
+       const eventSnapshots = onSnapshot(
+      collection(db, "Gallery"),
+      (Snapshots) => {
+        const filterData = Snapshots.docs.map((doc) => ({
+          ...doc.data(),
+          id: doc.id,
+        }));
+        setData(filterData);
+        console.log("filterdata:", filterData);
+        console.log("Gallery", data);
+      },
+      (error) => console.log(error)
+    );
+
+    return () => eventSnapshots();
+  }, []);
   // Close Modal
   const handleCloseModal = () => {
     setOpenModal(false);
@@ -67,13 +51,23 @@ const WSPGallery = () => {
   // Previous Image
   const prevSlide = () => {
     slideNumber === 0
-      ? setSlideNumber(galleryImages.length - 1)
+      ? setSlideNumber(data.length - 1)
       : setSlideNumber(slideNumber - 1);
+  };
+  const deleteHandler = async(ID) => {
+  
+    const {id}=ID
+    const eventDeleteDoc = doc(db, "Gallery", id);
+    await deleteDoc(eventDeleteDoc);
+    toast.warning("Image deleted successfully",{
+      position:toast.POSITION.TOP_CENTER,
+      theme:"colored"
+    })
   };
 
   // Next Image
   const nextSlide = () => {
-    slideNumber + 1 === galleryImages.length
+    slideNumber + 1 === data.length
       ? setSlideNumber(0)
       : setSlideNumber(slideNumber + 1);
   };
@@ -81,12 +75,12 @@ const WSPGallery = () => {
   return (
     <div className="GalleryMainDiv">
       <div className="GalleryHeading">
-        <SectionHeading heading="Gallery"/>
+        <SectionHeading heading="Gallery" />
       </div>
 
       {openModal && (
         <div className="sliderWrap">
-        <FaRegTimesCircle
+          <FaRegTimesCircle
             size={45}
             className="btnClose"
             onClick={handleCloseModal}
@@ -94,27 +88,27 @@ const WSPGallery = () => {
           <FaBackward size={45} className="btnPrev" onClick={prevSlide} />
           <FaForward size={45} className="btnNext" onClick={nextSlide} />
           <div className="fullScreenImage">
-            <img src={galleryImages[slideNumber].img} alt="" />
-            
-            <span>{galleryImages[slideNumber].title}</span>
+            <img src={data[slideNumber].imgUrl} alt="" />
+
+            <span>{data[slideNumber].title}</span>
           </div>
-          
         </div>
       )}
 
       <div className="galleryWrap">
-        {galleryImages &&
-          galleryImages.map((slide, index) => {
+        {data &&
+          data.map((slide, index) => {
+            {/* const { id } = slide; */}
             return (
               <div
                 className="single"
-                key={index}
-                onClick={() => handleOpenModal(index)}
+                key={slide.id}
+               
               >
-             
-      
-                <img src={slide.img} alt="" />
-                <span>{slide.title}</span>
+                <img src={slide.imgUrl}  onClick={() => handleOpenModal(index)} alt="" />
+                <button  onDoubleClick={() =>{deleteHandler({id:slide.id})}}  className="delete">
+                  Delete
+                </button>
               </div>
             );
           })}

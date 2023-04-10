@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState ,useContext} from "react";
 import { Link, useNavigate } from "react-router-dom";
 import "./AdminDashBoard.scss";
 import AdminImage from "./adminImage.png";
@@ -9,17 +9,23 @@ import AboutUsImage from "./profile_1.png";
 import random from "./icons8-photo-gallery-94.png";
 import { toast } from "react-toastify";
 import { Ripple } from 'primereact/ripple';
+import { AuthContext } from "../../Context/AuthContext";
+import { AdminCheckContext } from "../../Context/AdminCheckContext";
 
 const AdminDashBoard = (props) => {
 
     // for table (project-page) delete funnction
 const [data,setData]=useState(false)
 
+  const {dispatch}=useContext(AuthContext)
+  const {dispatcher}=useContext(AdminCheckContext)
   const Navigate = useNavigate();
 
   const logoutHandler = () => {
     sessionStorage.clear();
-   
+    dispatch({type:"LOGOUT",playload:null})
+    dispatcher({type:"LOGOUT",payload:true})
+
 
     toast.success("Logout successfully",{
       position:toast.POSITION.TOP_CENTER,
@@ -57,7 +63,7 @@ const [data,setData]=useState(false)
               <span>Add New Projects</span>
             </div>
           </Link>
-          <Link className="link" to="/admin-update-about-us">
+          <Link className="link" to="/admin-about-us">
           <div className="Buttons">
             <img className="img" src={AboutUsImage}></img>
             <span>Update About Us</span>

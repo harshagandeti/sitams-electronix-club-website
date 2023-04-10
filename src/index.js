@@ -1,13 +1,18 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
+import React from "react";
+import ReactDOM from "react-dom/client";
+import "./index.css";
+import App from "./App";
+import { AuthContextProvider } from "./Components/Context/AuthContext";
+import { AdminCheckContextProvider } from "./Components/Context/AdminCheckContext";
 
-
-const root = ReactDOM.createRoot(document.getElementById('root'));
+const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <App />
+    <AuthContextProvider>
+      <AdminCheckContextProvider>
+        <App />
+      </AdminCheckContextProvider>
+    </AuthContextProvider>
   </React.StrictMode>
 );
 
@@ -15,11 +20,9 @@ root.render(
 // to log results (for example: reportWebVitals(console.log))
 // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitalsreportWebVitals();
 
-
 export const useAuth = () => {
-  const data={
-    username:"Admin@sitams",
-    password:"Admin@sitams"
-  }
-}
-  
+  const data = {
+    username: "Admin@sitams",
+    password: "Admin@sitams",
+  };
+};

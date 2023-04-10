@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 // import { useTable } from "react-table";
 import { FaSearch } from "react-icons/fa";
 import { DataTable } from "primereact/datatable";
@@ -9,100 +9,75 @@ import "./ProjectsPage.scss";
 import "primeicons/primeicons.css";
 import "primereact/resources/primereact.min.css";
 import "primereact/resources/themes/lara-light-indigo/theme.css";
+import { FilterMatchMode, FilterOperator } from "primereact/api";
 
 // firebase config &libraries
-import { db } from "../Api/Config";
-import { collection, getDocs } from "firebase/firestore";
+import { db } from "../../Config";
+import {
+  collection,
+  getDocs,
+  onSnapshot,
+  query,
+  orderBy,
+  where,
+} from "firebase/firestore";
+import { AdminCheckContext } from "../Context/AdminCheckContext";
 
 const ProjectsPage = (props) => {
   const [isAuth, setIsAuth] = useState(false);
   const [project, setProject] = useState();
-
-  useEffect(() => {
-    const getEvents = async () => {
-      try {
-        const eventSnapshot = await getDocs(collection(db, "NewProject"));
-        const filterData = eventSnapshot.docs.map((doc) => ({
-          ...doc.data(),
-          id: doc.id,
-        }));
-        setProject(filterData);
-        console.log("projects", project);
-      } catch (e) {
-        console.error("Error adding document: ", e);
-      }
-    };
-    getEvents();
+  const [globalFilterValue, setGlobalFilterValue] = useState("");
+  const {AdminCheck}=useContext(AdminCheckContext)
+  const [filters, setFilters] = useState({
+    global: { value: null, matchMode: FilterMatchMode.CONTAINS },
   });
 
-  const data = [
-    {
-      id: 1,
-      title: "machine learning model for real time driver drowsiness detection",
-      passedOutYear: 2023,
-      typeOfProject: "Mini Project",
+  useEffect(() => {
+getData()
+  }, []);
+
+const getData=()=>{
+  const eventSnapshots = onSnapshot(
+    collection(db, "New-Projects"),
+    (Snapshots) => {
+      const filterData = Snapshots.docs.map((doc) => ({
+        ...doc.data(),
+        id: doc.id,
+      }));
+      setProject(filterData);
+      console.log("projects", project);
     },
-    {
-      id: 2,
-      title: "machine learning model for real time driver drowsiness detection",
-      passedOutYear: 2023,
-      typeOfProject: "final Year Project",
-    },
-    {
-      id: 3,
-      title: "machine learning model for real time driver drowsiness detection",
-      passedOutYear: 2023,
-      typeOfProject: "Mini Project",
-    },
-    {
-      id: 4,
-      title: "machine learning model for real time driver drowsiness detection",
-      passedOutYear: 2023,
-      typeOfProject: "final Year Project",
-    },
-    {
-      id: 5,
-      title: "machine learning model for real time driver drowsiness detection",
-      passedOutYear: 2023,
-      typeOfProject: "personal Project",
-    },
-    {
-      id: 6,
-      title: " driver drowsiness detection",
-      passedOutYear: 2023,
-      typeOfProject: "final Year Project",
-    },
-    {
-      id: 7,
-      title: "machine learning model for real time driver drowsiness detection",
-      passedOutYear: 2023,
-      typeOfProject: "Mini Project",
-    },
-    {
-      id: 8,
-      title: "machine learning model for real time driver drowsiness detection",
-      passedOutYear: 2023,
-      typeOfProject: "final Year Project",
-    },
-    {
-      id: 9,
-      title: "machine learning model for real time driver drowsiness detection",
-      passedOutYear: 2023,
-      typeOfProject: "final Year Project",
-    },
-    {
-      id: 10,
-      title: "machine learning model for real time driver drowsiness detection",
-      passedOutYear: 2023,
-      typeOfProject: "Personal Project",
-    },
-    {
-      id: 11,
-      title: "machine learning model for real time driver drowsiness detection",
-      passedOutYear: 2023,
-      typeOfProject: "final Year Project",
-    },
-  ];
+    (error) => console.log(error)
+  );
+
+  return () => eventSnapshots();
+}
+  // Searching & Sorting
+
+  const onGlobalFilterChange = (e) => {
+    const value = e.target.value;
+    let _filters = { ...filters };
+    _filters["global"].value = value;
+    setFilters(_filters);
+    setGlobalFilterValue(value);
+  };
+
+  const filterHandler = async (Click) => {
+    const Type=Click.click
+    const q = query(
+      collection(db, "New-Projects"),
+      where("project.type", "==", Type)
+    );
+    const querySnapshot = await getDocs(q);
+    const filterData = querySnapshot.docs.map((doc) => ({
+      ...doc.data(),
+      id: doc.id,
+    }));
+    setProject(filterData);
+    console.log("projects", project);
+    console.log("working");
+  };
+
 
   // table boady icons
 
@@ -121,7 +96,7 @@ const ProjectsPage = (props) => {
     <div
       className="delete-div"
       onClick={() => {
-        console.log("Delete");
+        return <input type="dow"></input>;
       }}
     >
       <RiDeleteBin6Line className="delete" />
@@ -129,44 +104,80 @@ const ProjectsPage = (props) => {
     </div>
   );
 
+const deletHandler=(id)=>{
+
+}
+
   return (
     <div className="PPMainDiv">
       <SectionHeading heading="Projects" />
       <div className="searchMainContainer">
         <div className="searchContainer">
-          <input type="search" placeholder="Search Titles ......"></input>
-          <div className="FaSearch">
-            <FaSearch id="icon" size={30} />
-          </div>
+          <form>
+            <input
+              type="search"
+              value={globalFilterValue}
+              onChange={onGlobalFilterChange}
+              placeholder="Search keys "
+            ></input>
+          </form>
         </div>
         <div className="sortContainer">
-          <button className="all-btn">All</button>
-          <button className="nth-1">Mini Project</button>
-          <button className="nth-2">Final Year Project</button>
-          <button className="nth-3">Personal Project</button>
+          <button  className="all-btn" onClick={()=>{getData()}}>All</button>
+          <button
+            className="nth-1"
+            onClick={() => {
+              filterHandler({click:"Mini project"})
+            }}
+          >
+            Mini Project
+          </button>
+          <button className="nth-2" onClick={() => {
+              filterHandler({click:"Final year project"})
+            }}>
+            Final Year Project
+          </button>
+          <button className="nth-3" onClick={() => {
+              filterHandler({click:"Personal project"})
+            }}>
+            Personal Project
+          </button>
         </div>
       </div>
 
       <div className="Table">
         <div className="card">
           <DataTable
-            value={data}
+            value={project}
+            dataKey="id"
+            globalFilterFields={[
+              "project.title",
+              "project.year",
+              "project.type",
+            ]}
             showGridlines
+            filters={filters}
             stripedRows
+            // filterDisplay="row"
+            emptyMessage="No projects found."
             paginator
             rows={10}
             rowsPerPageOptions={[5, 10, 25, 50]}
             tableStyle={{ minWidth: "50rem" }}
           >
-            <Column field="title" header="Title of the project"></Column>
-            <Column field="passedOutYear" header="Passed out year"></Column>
-            <Column field="typeOfProject" header="Type of project"></Column>
+            <Column
+              field="project.title"
+              header="Title of the project"
+            ></Column>
+            <Column field="project.year" header="Passed out year"></Column>
+            <Column field="project.type" header="Type of project"></Column>
             <Column
               field="Document"
               body={downloadIcon}
+              onClick="id"
               header="Document"
             ></Column>
-            <Column hidden={isAuth} body={deleteIcon} header="Delete"></Column>
+            <Column hidden={AdminCheck} body={deleteIcon}  header="Delete"></Column>
           </DataTable>
         </div>
       </div>

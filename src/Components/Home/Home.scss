@@ -1,0 +1,9 @@
+.Home-Main{
+    position: relative;
+    .Home-sub{
+        position: fixed;
+        right: 12%;
+        bottom: 25%;
+        z-index: 20000
+    }
+}

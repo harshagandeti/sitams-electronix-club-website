@@ -1,45 +1,59 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect,useRef } from "react";
 import "./AddProjects.scss";
 import projectImage from "../Admin-DashBoard-Page/innovation.png";
+
+
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+
+//react prime
+import { ProgressSpinner } from 'primereact/progressspinner';
+import "primeicons/primeicons.css";
+import "primereact/resources/primereact.min.css";
+import "primereact/resources/themes/lara-light-indigo/theme.css";
 // firebase config &libraries
-import { db, Storage } from "../../Api/Config";
+import { db, Storage } from "../../../Config";
 import { collection, addDoc } from "firebase/firestore";
 import { getDownloadURL, ref, uploadBytesResumable } from "firebase/storage";
+
+
 const AddProjects = () => {
+  const aRef = useRef(null);
   const [project, setProject] = useState({
     title: "",
     year: "",
     type: "",
   });
   const [file, setFile] = useState(null);
-  const [Progress, setProgress] = useState(null);
+  const [progress, setProgress] = useState("");
+  const [spinner,setSpinner]=useState(false)
 
   const changeHandler = (e) => {
     setProject({ ...project, [e.target.name]: e.target.value });
   };
 
+
   useEffect(() => {
     const uploadFile = () => {
-
-      const name = new Date().getTime() + file.name;
-      const storageRef = ref(Storage, file.name);
-      const uploadTask = uploadBytesResumable(storageRef, file);
-
+      const metadata = {
+        contentType: 'file/doc'|| "file/docx" || "file/pdf" 
+      };
+      const storageRef = ref(Storage, `Projects/${file.name}+${new Date()}`);
+      const uploadTask = uploadBytesResumable(storageRef, file,metadata );
       uploadTask.on(
         "state_changed",
         (snapshot) => {
           const progress =
             (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+          console.log("Upload is " + progress + "% done");
           setProgress(progress);
+          setSpinner(true)
           switch (snapshot.state) {
             case "paused":
-              console.log("upload file is pause");
+              console.log("Upload is paused");
               break;
-
             case "running":
-              console.log("upload file is runing");
+              console.log("Upload is running");
               break;
             default:
               break;
@@ -48,40 +62,59 @@ const AddProjects = () => {
         (error) => {
           console.log(error);
         },
-        getDownloadURL(uploadTask.snapshot.ref).then((downloadUrl) => {
-          setProject((prev) => ({ ...prev, fileUrl: downloadUrl }));
-          console.log("Project", downloadUrl);
-        })
+        () => {
+          getDownloadURL(uploadTask.snapshot.ref).then((downloadUrl) => {
+            toast.info("Document upload to firebase successfully");
+            setProgress(false)
+            setProject((prev) => ({ ...prev, docUrl: downloadUrl }));
+          });
+        }
       );
     };
 
+    file && uploadFile();
   }, [file]);
+
   const submitHandler = async (e) => {
     e.preventDefault();
     console.log("submit:", project,file);
     try {
-      const docRef = await addDoc(collection(db, "NewProject"), {
+      const docRef = await addDoc(collection(db, "New-Projects"), {
         project,
       });
       console.log("Document written with ID: ", docRef.id);
+      toast.success("New Project Added Successfully",{
+        position:toast.POSITION.TOP_CENTER,
+        theme:"colored"})
     } catch (e) {
       console.error("Error adding document: ", e);
     }
 
     cancelHandler();
+    resetInput()
   };
-  const cancelHandler = () => {
+  
+  const resetInput = () => {
+    aRef.current.value = null;
+  };
+  const cancelHandler = (e) => {
     setProject({
       title: "",
       year: "",
       type: "",
     });
-    setFile("");
+    resetInput()
+   
   };
 
   return (
     <div className="AP-Main-Div">
       <div className="container-box">
+      <div className={spinner?" Spinner flex justify-content-center" :"disable"}>
+            <ProgressSpinner />
+            <h4> Document uploading {Math.floor(progress)}%</h4>
+            <h5>After Completion of document uploading <span>Click Submit Button</span></h5>
+        </div>
         <div className="imgDiv">
           <img className="img" src={projectImage}></img>
         </div>
@@ -117,7 +150,7 @@ const AddProjects = () => {
                   className="input-radio"
                   type="radio"
                   name="type"
-                  value="final year project"
+                  value="Final year project"
                   onChange={changeHandler}
                 ></input>
                 Final year project
@@ -129,7 +162,7 @@ const AddProjects = () => {
                   className="input-radio"
                   type="radio"
                   name="type"
-                  value="Mini project"
+                  value="Mini Project"
                   onChange={changeHandler}
                 ></input>
                 Mini project
@@ -153,6 +186,7 @@ const AddProjects = () => {
                 className="input-file"
                 type="file"
                 name="file"
+                ref={aRef}
                 onChange={(e) => {
                   setFile(e.target.files[0]);
                 }}

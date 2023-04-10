@@ -13,6 +13,7 @@
 
 
 .galleryWrap {
+  height: max-content;
 
   -webkit-column-count: 3;
   -moz-column-count: 3;
@@ -32,32 +33,27 @@
   transition: all 350ms ease;
   cursor: pointer;
   margin: 12px;
-
+  position: relative;
   &:hover {
     height: auto;
   }
 }
 
 .galleryWrap .single img {
-  max-width: 100%;
-}
+  max-width: 90%;
+  height: 90%;
 
-.galleryWrap .single span {
-  display: none;
-  max-width: 100%;
-  height: fit-content;
-  margin: 10px 10px;
-  padding: 10px;
+ 
 }
-
-.galleryWrap .single:hover span {
-  display: block;
-  max-width: 100%;
-  height: fit-content;
-  margin: 10px 10px;
-  transform: scale(1.02);
-  color: orangered;
-  font-weight: 600;
+.galleryWrap .single .delete {
+  width: 60%;
+  height: 30px;
+  border: none;
+  margin: 10px;
+  background-color: orange;
+  &:hover{
+background-color: rgb(255, 55, 0);
+  }
 }
 
 .galleryWrap .single img:hover {
@@ -82,7 +78,7 @@
   height: 100%;
 
 }
-
+.sliderWrap .btnDelete,
 .sliderWrap .btnClose,
 .sliderWrap .btnPrev,
 .sliderWrap .btnNext {
@@ -92,16 +88,21 @@
   color: #00d0ff;
   z-index: 9999;
 }
-
+.btnDelete:hover,
 .btnNext:hover,
 .btnPrev:hover,
 .btnClose:hover {
   opacity: 10;
 }
 
-.sliderWrap .btnClose {
+.sliderWrap .btnDelete {
   top: 40px;
   right: 40px;
+  color: red;
+}
+.sliderWrap .btnClose {
+  top: 40px;
+  left: 40px;
   color: red;
 }
 

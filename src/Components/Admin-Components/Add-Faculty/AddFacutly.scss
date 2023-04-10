@@ -8,6 +8,32 @@
         padding: 20px;
         display: flex;
         margin: 0 auto;
+        position: relative;
+        .disable {
+            display: none;
+        }
+
+        .Spinner {
+            display: flex;
+            align-items: center;
+          text-align: center;
+            width: 80%;
+            flex-direction: column;
+            padding: 20px;
+            position: absolute;
+            background-color: rgba(240, 248, 255, 0.947);
+
+            h4 {
+                color: #ff0703;
+            }
+
+            h5 {
+                span{
+                    color: #0b6ebe;
+                }
+            }
+        }
+
         .Btn-section {
             display: flex;
             width: 100%;

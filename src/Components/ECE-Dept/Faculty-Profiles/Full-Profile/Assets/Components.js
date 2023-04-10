@@ -1,7 +1,7 @@
 import React from "react";
 import "./Components.scss"
 
-export const About = (name, designation, doj, dept, id) => {
+export const About = ({About}) => {
   return (
     <div className="container-lower">
       <div className="lower-left">
@@ -61,7 +61,7 @@ export const About = (name, designation, doj, dept, id) => {
 };
 
 
-export const UG_PG = () => {
+export const UG_PG = ({UG,PG}) => {
   return (
     <div className="container-lower">
     <div className="lower-left">
@@ -118,7 +118,7 @@ export const UG_PG = () => {
 
 
 
-export const PhD = () => {
+export const PhD_ = ({PhD,Other_ED}) => {
   return (
     <div className="container-lower">
     <div className="lower-left">
@@ -173,7 +173,7 @@ export const PhD = () => {
   )
 }
 
-export const Other_Details = () => {
+export const Other_Details = ({Other_Details}) => {
   return (
     <div className="container-lower">
     <div className="lower-left">
