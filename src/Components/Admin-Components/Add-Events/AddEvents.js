@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import "./AddEvents.scss";
 import SectionHeading from "../../Section-Heading/SectionHeading";
 import { Api } from "../../Api/Api";
-
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 //firebase config & libraries
@@ -20,7 +19,6 @@ const AddEvents = (props) => {
     time: "",
     register_Link: "",
   });
-
   const { name, room, block, day, month, time, register_Link } = event;
   const changeHandler = async (e) => {
     setEvent({ ...event, [e.target.name]: e.target.value });
@@ -37,15 +35,12 @@ const AddEvents = (props) => {
         "blue-dark",
       ];
       const randomIndex = Math.floor(Math.random() * arr.length);
-  
       const item = arr[randomIndex];
       setColor(item);
       return item;
     };
     getRandomColor()
   })
-
-
   const config = {
     headers: {
       "Content-Type": "application/json",
@@ -61,7 +56,6 @@ const AddEvents = (props) => {
         position:toast.POSITION.TOP_CENTER,
         theme:"colored"
       })
-      console.log("Document written with ID: ", docRef.id);
     } catch (e) {
       console.error("Error adding document: ", e);
     }
@@ -69,8 +63,6 @@ const AddEvents = (props) => {
   const submitHandler = async (e) => {
     e.preventDefault();
     postHandler();
- 
-    // cancel handler for clear form after submit
     cancelHandler();
   };
   const cancelHandler = () => {
