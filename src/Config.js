@@ -16,11 +16,3 @@ export const db = getFirestore(app);
 export const Storage = getStorage(app);
 export const auth = getAuth(app);
 
-// const firebaseConfig = {
-//   apiKey: "<SOME_Key>",
-//   authDomain: "<SOME_Key>",
-//   projectId: "<SOME_Key>",
-//   storageBucket: "<SOME_Key>",
-//   messagingSenderId: "<SOME_Key>",
-//   appId: "<SOME_Key>"
-// };
