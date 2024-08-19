@@ -71,7 +71,6 @@ const AddImages = () => {
         imgUrl,
         timeStamp:serverTimestamp(),
       });
-      console.log("Document written with ID: ", docRef.id);
       toast.success("New Image Successfully", {
         position: toast.POSITION.TOP_CENTER,
         theme: "colored",
