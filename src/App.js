@@ -33,9 +33,7 @@ function App() {
 
   const [logout,setLogout]=useState(null)
   const [events,setEvents]=useState([])
-  console.log("APP:",events)
 const {authAdmin}=useContext(AuthContext)
-
 const ReqiuredAuth=({children})=>{
 return authAdmin ? children :<Navigate to='/'></Navigate>
 }
@@ -64,18 +62,12 @@ return authAdmin ? children :<Navigate to='/'></Navigate>
             <Route path="/domain-web-development"  element={<WebDevelopement />}></Route>
             <Route path="/domain-machine-learning"  element={<MachineLearning />}></Route>
             <Route path="/domain-machine-learning"  element={<MachineLearning />}></Route>
-          
             <Route path="/ece-dept"  element={<ECE_Dept />}/>
             <Route path="/about-ece-dept" exact index element={<AboutDept />}></Route>
             <Route path="/labs"  element={<Labs />}></Route>
             <Route path="/faculty-profiles"  element={<FacultyProfile />}></Route>
-
             <Route path="/faculty-full-profile"  element={<FullProfile />}>
             </Route>
-
-
-            
-
           </Routes>
           <Footer/>
         </BrowserRouter>
@@ -83,5 +75,4 @@ return authAdmin ? children :<Navigate to='/'></Navigate>
     </div>
   );
 }
-
 export default App;
