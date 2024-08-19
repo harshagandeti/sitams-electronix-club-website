@@ -8,7 +8,6 @@ import "primeicons/primeicons.css";
 import "primereact/resources/primereact.min.css";
 import "primereact/resources/themes/lara-light-indigo/theme.css";
 
-import {auth } from '../../../Config';
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { AuthContext } from "../../Context/AuthContext";
 import AdminAbout from "../Admin-About/AdminAbout";
@@ -22,22 +21,10 @@ const AdminAuth = (props) => {
 
   // for table (project-page) delete funnction
   const [isAuth,setIsAuth]=useState(false)
-
-  const data = {
-    username: "Admin@sitams",
-    password: "Admin@sitams",
-  };
-
   const submitHandler = (e) => {
     e.preventDefault();
-    console.log(username);
-    console.log(password);
-
-
     Validation();
     LoginProcess();
-
-
     setUsername("");
     setPassword("");
   };
@@ -47,7 +34,6 @@ const AdminAuth = (props) => {
       const authCheck= signInWithEmailAndPassword(auth,username,password) .then((userCredential) => {
         // Signed in 
         const user = userCredential.user;
-        console.log(user)
         dispatch({type:"LOGIN",payload:user})
         dispatcher({type:"LOGIN",payload:true})
         toast.success("Login Successfully",{
@@ -55,8 +41,6 @@ const AdminAuth = (props) => {
           theme:"colored"
         })
         setIsAuth(true)
-        sessionStorage.setItem("username", username);
-        sessionStorage.setItem("password", password);
         usenavigate("/admin-dash-board");
       })
       .catch((error) => {
@@ -66,7 +50,6 @@ const AdminAuth = (props) => {
         toast.error("Please enter valid username or Password", {
           position: toast.POSITION.TOP_CENTER,
           theme:"colored"
-         
         });
       });
 
